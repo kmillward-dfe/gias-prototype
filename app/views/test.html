@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+  improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+href: "http://localhost:3000/landing",
+text: "Home",
+active: true
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Downloads"
+},
+{
+href: "#4",
+text: "About"
+},
+{
+href: "#5",
+text: "Help"
+},
+{
+href: "#6",
+text: "News"
+}
+],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link"
+        href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+      will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
+          </ol>
+      </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">Establishment</span>
+    <h1 class="govuk-heading-l">Aston Academy</h1>
+
+      <p class="urn establishment-fine-detail"><abbr title="Unique Reference Number">URN</abbr>: 136718</p>
+      <p class="establishment-type establishment-fine-detail">Academy converter</p>
+      
+      <p class="establishment-data-download">
+          <a href="/Downloads/Download/Establishment/136718?state=W3siUm91dGVOYW1lIjoiU2VhcmNoIiwiUm91dGVWYWx1ZXMiOnsiU2VsZWN0ZWRUYWIiOiJFc3RhYmxpc2htZW50cyJ9LCJMYWJlbCI6IlNlYXJjaCJ9LHsiUm91dGVOYW1lIjoiR3JvdXBEZXRhaWxzIiwiUm91dGVWYWx1ZXMiOnsiaWQiOjIxOTV9LCJMYWJlbCI6IkFTVE9OIENPTU1VTklUWSBFRFVDQVRJT04gVFJVU1QifSx7IlJvdXRlTmFtZSI6IkVzdGFiRGV0YWlscyIsIlJvdXRlVmFsdWVzIjp7ImlkIjoxMzY3MTh9LCJMYWJlbCI6IkFzdG9uIEFjYWRlbXkifV01" rel="nofollow">Download establishment data</a>
+      </p>
+
+          <div>
+              <p class="establishment-fine-detail">Academy trust: <a class="govuk-breadcrumbs__link" href="/Groups/Group/Details/2195">ASTON COMMUNITY EDUCATION TRUST</a></p>
+          </div>
+
+  </div>
+</div>
+
+{% endblock %}
