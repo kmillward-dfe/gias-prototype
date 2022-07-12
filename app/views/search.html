@@ -1,0 +1,628 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+  improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+href: "http://localhost:3000/landing",
+text: "Home",
+active: true
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Downloads"
+},
+{
+href: "#4",
+text: "About"
+},
+{
+href: "#5",
+text: "Help"
+},
+{
+href: "#6",
+text: "News"
+}
+],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link"
+        href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+      will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
+          </ol>
+      </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl ">Get Information about Schools</h1>
+    <p>This is a register of schools and colleges in England. You can search for and download information on
+      establishments, establishment groups (such as a local authority, trust or federation) or governors. Schools, local
+      authorities and academy trusts can also update details by signing in to their DfE Sign-in account.</p>
+  </div>
+
+
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#past-day">
+          Find an establishment
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Find an establishment group
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-month">
+          Find a governor
+        </a>
+      </li>
+    </ul>
+
+
+    <div class="govuk-tabs__panel" id="past-day">
+ 
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-heading-s govuk-!-margin-top-4">Search by:</h2>
+              </legend>
+      
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email"
+                    data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Name or reference number
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <div class="panel panel-border-narrow" id="searchby-name-ref" aria-hidden="false">
+      
+                      <span class="govuk-error-message hidden"></span>
+      
+      
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="TextSearchModel_Text">
+                          Enter name, <abbr title="Unique Reference Number">URN</abbr>, LAESTAB or UKPRN
+                          <a href="#name-reference-help" class="help-icon modal-link">
+                            <span class="govuk-visually-hidden">Help with reference numbers</span>
+                            <span class="govuk-visually-hidden">Opens a dialog</span>
+      
+                          </a>
+                        </label>
+      
+                        <div class="awesomplete"><input aria-describedby="name-reference-help" autocomplete="off"
+                            class="govuk-input govuk-input--width-20" data-suggestion-url="/search/suggest?text="
+                            id="TextSearchModel_Text" maxlength="200" name="TextSearchModel.Text" type="text" value=""
+                            aria-expanded="false" aria-owns="awesomplete_list_1" role="combobox">
+                          <ul hidden="" role="listbox" id="awesomplete_list_1"></ul><span class="visually-hidden"
+                            role="status" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                      </div>
+                      <div class="govuk-form-group">
+                        <div class="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input id="include-open-establishments-name" type="checkbox" checked="checked" name="OpenOnly"
+                              value="true" class="govuk-checkboxes__input">
+                            <label for="include-open-establishments-name" class="govuk-checkboxes__label">Include open schools
+                              only</label>
+                          </div>
+                        </div>
+                      </div>
+                      <input id="estab-autosuggest-value" name="TextSearchModel.AutoSuggestValue" type="hidden" value="">
+                      <div class="govuk-form-group">
+                        <button type="submit" class="govuk-button" id="name-search-submit" name="SearchType"
+                          value="Text">Search</button>
+                      </div>
+                      <input type="hidden" name="f" value="true">
+                    </div>
+      
+                  </div>
+      
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone"
+                    data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                    Location
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                  <div class="govuk-form-group">
+                    <div class="panel panel-border-narrow" id="searchby-location-ref" aria-hidden="false">
+      
+                      <span class="govuk-error-message hidden"></span>
+      
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="LocationSearchModel_Text">Enter postcode, town or city</label>
+                        <div class="awesomplete"><input autocomplete="off"
+                            class="govuk-input govuk-input--width-20 location-search" id="LocationSearchModel_Text"
+                            maxlength="200" name="LocationSearchModel.Text" type="text" value="" aria-expanded="false"
+                            aria-owns="awesomplete_list_3" role="combobox">
+                          <ul hidden="" role="listbox" id="awesomplete_list_3"></ul><span class="visually-hidden"
+                            role="status" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                      </div>
+      
+                      <input id="LocationSearchModel_AutoSuggestValue" name="LocationSearchModel.AutoSuggestValue"
+                        type="hidden" value="">
+                      <div class="govuk-form-group">
+                        <div class="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input id="include-open-establishments-location" type="checkbox" checked="checked" name="OpenOnly"
+                              value="true" class="govuk-checkboxes__input">
+                            <label for="include-open-establishments-location" class="govuk-checkboxes__label">Include open
+                              schools only</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="govuk-form-group">
+                        <button type="submit" class="govuk-button search-button" id="location-search-submit" name="SearchType"
+                          value="Location">Search</button>
+                      </div>
+                    </div>
+                  </div>
+      
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text"
+                    data-aria-controls="conditional-contact-3">
+                  <label class="govuk-label govuk-radios__label" for="contact-3">
+                    Local authority
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                  <div class="govuk-form-group">
+                    <div class="panel panel-border-narrow" id="searchby-la-ref" aria-hidden="false">
+                      <span class="govuk-error-message hidden"></span>
+      
+      
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="LocalAuthorityToAdd">Enter one or more local authorities (LAs)</label>
+                        <div class="selected-las form-group">
+                          <div id="la-id-target" class="la-id-target">
+      
+                            <div class="floating-text-field-wrap">
+                              <div class="awesomplete"><input autocomplete="off"
+                                  class="govuk-input govuk-input--width-20 floating-text-field" id="LocalAuthorityToAdd"
+                                  name="LocalAuthorityToAdd" type="text" value="" aria-expanded="false"
+                                  aria-owns="awesomplete_list_4" role="combobox">
+                                <ul hidden="" role="listbox" id="awesomplete_list_4"></ul><span class="visually-hidden"
+                                  role="status" aria-live="assertive" aria-atomic="true"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="govuk-form-group">
+                        <div class="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input id="include-open-establishments-location" type="checkbox" checked="checked" name="OpenOnly"
+                              value="true" class="govuk-checkboxes__input">
+                            <label for="include-open-establishments-location" class="govuk-checkboxes__label">Include open
+                              schools only</label>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <input type="hidden" name="SelectedTab" value="Establishments">
+      
+                      <div class="govuk-form-group">
+                        <button type="submit" class="govuk-button" id="la-search-submit" name="SearchType"
+                          value="ByLocalAuthority">Search</button>
+                      </div>
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
+      
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-4" name="contact" type="radio" value="establishment"
+                    data-aria-controls="conditional-contact-4">
+                  <label class="govuk-label govuk-radios__label" for="contact-4">
+                    All establishments
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-4">
+                      <div class="panel panel-border-narrow" id="searchby-all-ref" aria-hidden="false">
+                        <div class="govuk-form-group govuk-!-padding-top-2">
+                          <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input id="include-open-establishments-all" type="checkbox" checked="checked" name="OpenOnly"
+                                value="true" class="govuk-checkboxes__input">
+                              <label for="include-open-establishments-all" class="govuk-checkboxes__label">Include open
+                                schools only</label>
+                            </div>
+                          </div>
+                        </div>
+                        <input id="TextSearchModel_AutoSuggestValue" name="TextSearchModel.AutoSuggestValue" type="hidden"
+                          value="">
+                        <div class="govuk-form-group ">
+                          <button type="submit" class="govuk-button search-button" id="all-search-submit" name="SearchType"
+                            value="EstablishmentAll">Search</button>
+                        </div>
+                        <input type="hidden" name="f" value="true">
+                      </div>
+                    </div>
+                  </div>
+
+    </div>
+
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+
+<p>You can search for academy trusts and sponsors, local authority maintained school federations and trusts as well as children's centre groups and collaborations.</p>
+        
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h2 class="govuk-heading-s govuk-!-margin-top-4">Search by:</h2>
+          </legend>
+  
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact5" name="contact" type="radio" value="email"
+                data-aria-controls="conditional-contact5">
+              <label class="govuk-label govuk-radios__label" for="contact5">
+                Name or reference number
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact5">
+              <div class="govuk-form-group">
+                <div class="panel panel-border-narrow" id="searchby-name-ref" aria-hidden="false">
+  
+                  <span class="govuk-error-message hidden"></span>
+  
+  
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="TextSearchModel_Text">
+                        Enter name, Companies House number, Group UID, ID or UKPRN
+                      <a href="#name-reference-help" class="help-icon modal-link">
+                        <span class="govuk-visually-hidden">Help with reference numbers</span>
+                        <span class="govuk-visually-hidden">Opens a dialog</span>
+  
+                      </a>
+                    </label>
+  
+                    <div class="awesomplete"><input aria-describedby="name-reference-help" autocomplete="off"
+                        class="govuk-input govuk-input--width-20" data-suggestion-url="/search/suggest?text="
+                        id="TextSearchModel_Text" maxlength="200" name="TextSearchModel.Text" type="text" value=""
+                        aria-expanded="false" aria-owns="awesomplete_list_1" role="combobox">
+                      <ul hidden="" role="listbox" id="awesomplete_list_1"></ul><span class="visually-hidden"
+                        role="status" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input id="include-open-establishments-name" type="checkbox" checked="checked" name="OpenOnly"
+                          value="true" class="govuk-checkboxes__input">
+                        <label for="include-open-establishments-name" class="govuk-checkboxes__label">Include open schools
+                          only</label>
+                      </div>
+                    </div>
+                  </div>
+                  <input id="estab-autosuggest-value" name="TextSearchModel.AutoSuggestValue" type="hidden" value="">
+                  <div class="govuk-form-group">
+                    <button type="submit" class="govuk-button" id="name-search-submit" name="SearchType"
+                      value="Text">Search</button>
+                  </div>
+                  <input type="hidden" name="f" value="true">
+                </div>
+  
+              </div>
+  
+            </div>
+    
+  
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-6" name="contact" type="radio" value="establishment"
+                data-aria-controls="conditional-contact-6">
+              <label class="govuk-label govuk-radios__label" for="contact-6">
+                All establishment groups
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-6">
+                  <div class="panel panel-border-narrow" id="searchby-all-ref" aria-hidden="false">
+                    <div class="govuk-form-group govuk-!-padding-top-2">
+                      <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input id="include-open-establishments-all" type="checkbox" checked="checked" name="OpenOnly"
+                            value="true" class="govuk-checkboxes__input">
+                          <label for="include-open-establishments-all" class="govuk-checkboxes__label">Include open
+                            schools only</label>
+                        </div>
+                      </div>
+                    </div>
+                    <input id="TextSearchModel_AutoSuggestValue" name="TextSearchModel.AutoSuggestValue" type="hidden"
+                      value="">
+                    <div class="govuk-form-group ">
+                      <button type="submit" class="govuk-button search-button" id="all-search-submit" name="SearchType"
+                        value="EstablishmentAll">Search</button>
+                    </div>
+                    <input type="hidden" name="f" value="true">
+                  </div>
+                </div>
+              </div>
+  
+    </div>
+    </div>
+
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h2 class="govuk-heading-s govuk-!-margin-top-4">Search by:</h2>
+          </legend>
+  
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact8" name="contact" type="radio" value="email"
+                data-aria-controls="conditional-contact8">
+              <label class="govuk-label govuk-radios__label" for="contact8">
+                Name or reference number
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact8">
+              <div class="govuk-form-group">
+                <div class="panel panel-border-narrow" id="searchby-name-ref" aria-hidden="false">
+  
+                  <span class="govuk-error-message hidden"></span>
+  
+  
+                  <div class="panel panel-border-narrow" id="searchtype-gov-namerole-ref" aria-hidden="false">
+                    
+                    <span class="govuk-error-message hidden"></span>
+                    
+                    <div class="govuk-form-group">
+                        <label for="forename" class="govuk-label">First name</label>
+                        <input class="govuk-input govuk-input--width-20" id="GovernorSearchModel_Forename" maxlength="120" name="GovernorSearchModel.Forename" type="text" value="">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label for="surname" class="govuk-label">Last name</label>
+                        <input class="govuk-input govuk-input--width-20" id="surname" maxlength="120" name="GovernorSearchModel.Surname" type="text" value="">
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <div class="govuk-option-select gias-governor-roles">
+                            <div class="container-head" tabindex="0">
+                                <div class="option-select-label govuk-!-font-weight-bold">Role</div>
+                                <span class="govuk-body-s">For example, trustee</span>
+                            </div>
+                            <div class="options-container" id="governor-roles">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-6" value="6" type="checkbox">
+                                            <label for="govrole-6" class="govuk-checkboxes__label">
+                                                Accounting officer
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-1" value="1" type="checkbox">
+                                            <label for="govrole-1" class="govuk-checkboxes__label">
+                                                Chair of governors
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-8" value="8" type="checkbox">
+                                            <label for="govrole-8" class="govuk-checkboxes__label">
+                                                Chair of local governing body
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-3" value="3" type="checkbox">
+                                            <label for="govrole-3" class="govuk-checkboxes__label">
+                                                Chair of trustees
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-7" value="7" type="checkbox">
+                                            <label for="govrole-7" class="govuk-checkboxes__label">
+                                                Chief financial officer
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-2" value="2" type="checkbox">
+                                            <label for="govrole-2" class="govuk-checkboxes__label">
+                                                Governor
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-9" value="9" type="checkbox">
+                                            <label for="govrole-9" class="govuk-checkboxes__label">
+                                                Local governor
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-5" value="5" type="checkbox">
+                                            <label for="govrole-5" class="govuk-checkboxes__label">
+                                                Member
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-14" value="14" type="checkbox">
+                                            <label for="govrole-14" class="govuk-checkboxes__label">
+                                                N/a
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-11" value="11" type="checkbox">
+                                            <label for="govrole-11" class="govuk-checkboxes__label">
+                                                Shared chair of local governing body - establishment
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-10" value="10" type="checkbox">
+                                            <label for="govrole-10" class="govuk-checkboxes__label">
+                                                Shared chair of local governing body - group
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-13" value="13" type="checkbox">
+                                            <label for="govrole-13" class="govuk-checkboxes__label">
+                                                Shared local governor - establishment
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-12" value="12" type="checkbox">
+                                            <label for="govrole-12" class="govuk-checkboxes__label">
+                                                Shared local governor - group
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input name="GovernorSearchModel.RoleId" class="govuk-checkboxes__input" id="govrole-4" value="4" type="checkbox">
+                                            <label for="govrole-4" class="govuk-checkboxes__label">
+                                                Trustee
+                                            </label>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                
+                                <input class="govuk-checkboxes__input" id="IncludeHistoricRole0" name="GovernorSearchModel.IncludeHistoric" type="checkbox" value="true">
+                                <label for="IncludeHistoricRole0" class="govuk-checkboxes__label">Include historic records (governors who stepped down in the last 12 months)</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="govuk-form-group">
+                        <button type="submit" id="governor-search-submit" class="govuk-button" name="searchtype" value="Governor">Search</button>
+                    </div>
+                </div>
+  
+                    </div>
+  
+              </div>
+  
+            </div>
+    
+  
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-7" name="contact" type="radio" value="establishment"
+                data-aria-controls="conditional-contact-7">
+              <label class="govuk-label govuk-radios__label" for="contact-7">
+                All governors
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-7">
+                  <div class="panel panel-border-narrow" id="searchby-all-ref" aria-hidden="false">
+                    <div class="govuk-form-group govuk-!-padding-top-2">
+                      <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input id="include-open-establishments-all" type="checkbox" checked="checked" name="OpenOnly"
+                            value="true" class="govuk-checkboxes__input">
+                          <label for="include-open-establishments-all" class="govuk-checkboxes__label">Include historic records (governors who stepped down in the last 12 months)</label>
+                        </div>
+                      </div>
+                    </div>
+                    <input id="TextSearchModel_AutoSuggestValue" name="TextSearchModel.AutoSuggestValue" type="hidden"
+                      value="">
+                    <div class="govuk-form-group ">
+                      <button type="submit" class="govuk-button search-button" id="all-search-submit" name="SearchType"
+                        value="EstablishmentAll">Search</button>
+                    </div>
+                    <input type="hidden" name="f" value="true">
+                  </div>
+                </div>
+              </div>
+  
+    </div>
+
+   
+  </div>
+       
+            </div>
+        </div>
+    </div>
+{% endblock %}
