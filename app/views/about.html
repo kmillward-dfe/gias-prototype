@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+    improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+href: "http://localhost:3000/landing",
+text: "Home",
+active: true
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Downloads"
+},
+{
+href: "#4",
+text: "About"
+},
+{
+href: "#5",
+text: "Help"
+},
+{
+href: "#6",
+text: "News"
+}
+],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+            will help us to improve it.
+        </span>
+    </p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<main id="main-content" class="govuk-main-wrapper" role="main">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">About</h1>
+
+    <p>
+        Get Information about Schools (GIAS) is the Department for Education’s register for several organisation types and where information on other organisations is recorded and maintained.
+    </p>
+
+    <p>
+        GIAS is used by the department and key partners to contact establishments, update systems, perform analysis and inform policy decisions, some of which carry funding implications.
+    </p>
+
+    <p>
+        Establishment, federation, academy trust and approved local authority users can access their records by signing into their DfE Sign-in (DSI) account.
+    </p>
+
+    <p>
+        It is essential that these users ensure their organisations details are up-to-date on the GIAS website, including their governance details (where appliable) which is reflected through
+        <a href="https://www.legislation.gov.uk/ukpga/1996/56/section/538" target="_blank" rel="noreferrer noopener">The Education Act 1996 (opens in new tab)</a> and the
+        <a href="https://www.gov.uk/guidance/academy-trust-handbook" target="_blank" rel="noreferrer noopener">Academies Trust Handbook (ATH) (opens in new tab)</a>.
+    </p>
+
+    <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                The National Database of Governors
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+            <p>
+                All governance boards for state maintained establishments and academy trusts are required to provide information about people involved in governance for their organisation via GIAS which is also the
+                <a href="https://www.gov.uk/government/news/national-database-of-governors" target="_blank" rel="noreferrer noopener">National Database of Governors (opens in new tab)</a>.
+            </p>
+        </div>
+    </details>
+
+    <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                More information for establishment, local authority and group users
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+            <p>
+                All establishments have a GIAS record that should be kept up to date. Anyone can access the public site, however, to amend the establishment’s record and access non-public information the site must be accessed via DfE Sign-in (DSI). Each establishment has a DfE Sign-in approver who should ensure the establishment’s record is kept up to date. The approver can assign access to the establishment’s record for other establishment colleagues if they need to. For local authority maintained schools, the local authority is also able to access the establishment’s record to make amendments, and for academies and free schools multi-academy trusts (MATs).
+            </p>
+            <p>
+                All federations and multi-academy trusts (MATs) have a GIAS record that should be kept up to date. Anyone can access the public site, however to amend the records the following process should be taken by these organisations:
+            </p>
+            <p>
+                Federation records should be accessed via the federation establishment’s DfE Sign-in accounts.
+            </p>
+            <p>
+                Multi-academy trust (MAT) records should be accessed via the multi-academy trust DfE Sign-in (DSI) account. Each multi-academy trust has a DSI approver who can assign access to the MAT record for other colleagues if they wish to.
+            </p>
+            <p>
+                GIAS is the legislative avenue for local authority maintained schools to inform the Secretary of State of changes to their organisation made through the prescribed alterations regulation process:
+                <a href="https://www.gov.uk/government/publications/school-organisation-maintained-schools">“Making significant changes (‘prescribed alterations’) to maintained schools” (opens in new tab)</a>
+                . For academies the
+                <a href="https://www.gov.uk/government/publications/making-significant-changes-to-an-existing-academy">“Making significant changes to an open academy and closure by mutual agreement guidance” (opens in new tab)</a>
+                sets out that GIAS must be kept up-to-date.
+            </p>
+        </div>
+    </details>
+
+        <a class="back-to-top-link" href="#top">
+    <svg role="presentation" focusable="false" class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>
+    Back to top
+</a>
+
+</div>
+</div>
+
+</main>
+
+
+
+
+{% endblock %}
