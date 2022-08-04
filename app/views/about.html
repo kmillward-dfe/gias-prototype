@@ -53,27 +53,27 @@ serviceUrl: "/",
 navigation: [
 {
 href: "http://localhost:3000/landing",
-text: "Home",
-active: true
+text: "Home"
 },
 {
-href: "#2",
+href: "search",
 text: "Search"
 },
 {
-href: "#3",
+href: "download",
 text: "Downloads"
 },
 {
-href: "#4",
-text: "About"
+href: "about",
+text: "About",
+active: true
 },
 {
-href: "#5",
+href: "help",
 text: "Help"
 },
 {
-href: "#6",
+href: "news",
 text: "News"
 }
 ],
@@ -82,6 +82,7 @@ containerClasses: "govuk-width-container"
 {% endblock %}
 
 {% block beforeContent %}
+
 <div class="govuk-phase-banner ">
     <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -107,9 +108,6 @@ containerClasses: "govuk-width-container"
 {% endblock %}
 
 {% block content %}
-
-<main id="main-content" class="govuk-main-wrapper" role="main">
-
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">About</h1>
@@ -128,8 +126,8 @@ containerClasses: "govuk-width-container"
 
     <p>
         It is essential that these users ensure their organisations details are up-to-date on the GIAS website, including their governance details (where appliable) which is reflected through
-        <a href="https://www.legislation.gov.uk/ukpga/1996/56/section/538" target="_blank" rel="noreferrer noopener">The Education Act 1996 (opens in new tab)</a> and the
-        <a href="https://www.gov.uk/guidance/academy-trust-handbook" target="_blank" rel="noreferrer noopener">Academies Trust Handbook (ATH) (opens in new tab)</a>.
+        <a href="#" target="_blank" rel="noreferrer noopener">The Education Act 1996 (opens in new tab)</a> and the
+        <a href="#" target="_blank" rel="noreferrer noopener">Academies Trust Handbook (ATH) (opens in new tab)</a>.
     </p>
 
     <details class="govuk-details" data-module="govuk-details">
@@ -141,7 +139,7 @@ containerClasses: "govuk-width-container"
         <div class="govuk-details__text">
             <p>
                 All governance boards for state maintained establishments and academy trusts are required to provide information about people involved in governance for their organisation via GIAS which is also the
-                <a href="https://www.gov.uk/government/news/national-database-of-governors" target="_blank" rel="noreferrer noopener">National Database of Governors (opens in new tab)</a>.
+                <a href="#" target="_blank" rel="noreferrer noopener">National Database of Governors (opens in new tab)</a>.
             </p>
         </div>
     </details>
@@ -167,9 +165,9 @@ containerClasses: "govuk-width-container"
             </p>
             <p>
                 GIAS is the legislative avenue for local authority maintained schools to inform the Secretary of State of changes to their organisation made through the prescribed alterations regulation process:
-                <a href="https://www.gov.uk/government/publications/school-organisation-maintained-schools">“Making significant changes (‘prescribed alterations’) to maintained schools” (opens in new tab)</a>
+                <a href="#">“Making significant changes (‘prescribed alterations’) to maintained schools” (opens in new tab)</a>
                 . For academies the
-                <a href="https://www.gov.uk/government/publications/making-significant-changes-to-an-existing-academy">“Making significant changes to an open academy and closure by mutual agreement guidance” (opens in new tab)</a>
+                <a href="#">“Making significant changes to an open academy and closure by mutual agreement guidance” (opens in new tab)</a>
                 sets out that GIAS must be kept up-to-date.
             </p>
         </div>
@@ -185,7 +183,6 @@ containerClasses: "govuk-width-container"
 </div>
 </div>
 
-</main>
 
 
 

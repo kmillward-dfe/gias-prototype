@@ -1,0 +1,306 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+    improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+    href: "http://localhost:3000/landing",
+    text: "Home"
+},
+{
+    href: "../search",
+    text: "Search"
+    },
+    {
+    href: "../download",
+    text: "Downloads"
+    },
+    {
+    href: "../about",
+    text: "About"
+    },
+    {
+    href: "../help",
+    text: "Help",
+    active: true
+    },
+    {
+    href: "../news",
+    text: "News"
+    }
+    ],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service - your <a class="govuk-link"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+            will help us to improve it.
+        </span>
+    </p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../landing">Home</a></li>
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../help">Help</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-xl">How cookies are used on this service</h1>
+        </div>
+    </div>
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+            <div class="cookies">
+                <section class="gias-readability">
+                    <p>
+                        Get Information about Schools puts small files (known as 'cookies') onto your computer to
+                        collect information about how you browse the site.
+                    </p>
+    
+                    <p>Cookies are used to:</p>
+    
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>measure how you use the website so it can be updated and improved based on your needs</li>
+                        <li>remember the notifications you've seen so that we don't show them to you again</li>
+                    </ul>
+    
+                    <p>The cookies aren't used to identify you personally.</p>
+    
+                    <p>You'll normally see a message on the site before we store a cookie on your computer.</p>
+    
+                    <p>
+                        Find out more about
+                        <a href="#" target="_blank" rel="noreferrer noopener">
+                            how to manage cookies (opens in new tab)
+                        </a>.
+                    </p>
+                </section>
+                <section class="gias-readability">
+    
+                    <h2 class="govuk-heading-m">Measuring website usage</h2>
+    
+                    <p>
+                        We use Google Analytics software to collect information about how you use this website. We do this to help
+                        make sure the site is meeting the needs of its users and to help us make improvements, for example
+                        <a href="#" target="_blank" rel="noreferrer noopener">
+                            improving site search (opens in new tab)
+                        </a>.
+                        We also send cross-domain tracking information to GOV.UK to help us understand and monitor performance data across multiple public services.
+                    </p>
+    
+                    <p>Google Analytics stores information about:</p>
+    
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>the pages you visit on this website</li>
+                        <li>how long you spend on each page</li>
+                        <li>how you got to the site</li>
+                        <li>what you click on while you're visiting the site</li>
+                    </ul>
+    
+                    <p>We don't collect or store your personal information (for example your name or address) so this information can't be used to identify who you are.</p>
+    
+                    <p>We don't allow Google to use or share our analytics data.</p>
+    
+                    <p>Google Analytics sets the following cookies:</p>
+    
+                    <div class="table-wrapper">
+                        <table class="govuk-table gias-cookie-table">
+                            <caption class="govuk-visually-hidden">Google Analytics cookies</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" role="columnheader" class="govuk-table__header">
+                                        Name
+                                    </th>
+                                    <th scope="col" role="columnheader" class="govuk-table__header">
+                                        Purpose
+                                    </th>
+                                    <th scope="col" role="columnheader" class="govuk-table__header">
+                                        Expires
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell" data-label="Name">_ga</td>
+                                    <td class="govuk-table__cell" data-label="Purpose">This helps us count how many people visit GOV.UK by tracking if you've visited before</td>
+                                    <td class="govuk-table__cell" data-label="Expires">2 years</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell" data-label="Name">_gat</td>
+                                    <td class="govuk-table__cell" data-label="Purpose">Used to manage the rate at which page view requests are made</td>
+                                    <td class="govuk-table__cell" data-label="Expires">10 minutes</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell" data-label="Name">_gid</td>
+                                    <td class="govuk-table__cell" data-label="Purpose">Used to distinguish users</td>
+                                    <td class="govuk-table__cell" data-label="Expires">24 hours</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    <form action="/CookieChoices" method="post">                    <div class=" govuk-!-padding-top-4">
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" id="set-analytics-prefs">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        <h2 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+                                            Set your analytics preferences for Get Information about Schools
+                                        </h2>
+                                    </legend>
+                                    <div class="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="acceptAnalyticsCookies-true" name="acceptAnalyticsCookies" type="radio" value="true">
+                                            <label class="govuk-label govuk-radios__label" for="acceptAnalyticsCookies-true">
+                                                Use cookies that measure my website use
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" checked="checked" id="acceptAnalyticsCookies-false" name="acceptAnalyticsCookies" type="radio" value="false">
+                                            <label class="govuk-label govuk-radios__label" for="acceptAnalyticsCookies-false">
+                                                Do not use cookies that measure my website use
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-button-group">
+                                <button type="submit" class="govuk-button" data-module="govuk-button">
+                                    Save cookie settings
+                                </button>
+                            </div>
+                        </div>
+    </form>
+                    <p>
+                        You can
+                        <a href="#" target="_blank" rel="noreferrer noopener">
+                            opt out of Google Analytics cookies (opens in new tab)
+                        </a>.
+                    </p>
+                </section>
+                <section class="gias-readability">
+                    <h2 class="govuk-heading-m">Essential cookies</h2>
+                    <div class="table-wrapper">
+                        <table class="govuk-table gias-cookie-table">
+                            <caption class="govuk-visually-hidden">Get Information about Schools</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" role="columnheader" class="govuk-table__header">
+                                        Name
+                                    </th>
+                                    <th scope="col" role="columnheader" class="govuk-table__header">
+                                        Purpose
+                                    </th>
+                                    <th scope="col" role="columnheader" class="govuk-table__header">
+                                        Expires
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell" data-label="Name">analytics_preferences</td>
+                                    <td class="govuk-table__cell" data-label="Purpose">
+                                        Lets us know whether you agree to the use of analytics cookies to help us understand how you
+                                        use the service so we can make improvements
+                                    </td>
+                                    <td class="govuk-table__cell" data-label="Expires">28 days</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell" data-label="Name">AspNet.ApplicationCookie</td>
+                                    <td class="govuk-table__cell" data-label="Purpose">One of the ways that we manage the user access to the service</td>
+                                    <td class="govuk-table__cell" data-label="Expires">When you close your browser</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell" data-label="Name">AspNet.ExternalCookie</td>
+                                    <td class="govuk-table__cell" data-label="Purpose">One of the ways that we manage the user access to the service</td>
+                                    <td class="govuk-table__cell" data-label="Expires">When you close your browser</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell" data-label="Name">__RequestVerificationToken</td>
+                                    <td class="govuk-table__cell" data-label="Purpose">One of the ways that we manage the user access to the service</td>
+                                    <td class="govuk-table__cell" data-label="Expires">When you close your browser</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+    
+                    <a class="back-to-top-link" href="#top">
+            <svg role="presentation" focusable="false" class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+            </svg>
+            Back to top
+        </a>
+    
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

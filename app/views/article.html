@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+    improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+href: "http://localhost:3000/landing",
+text: "Home"
+},
+{
+    href: "search",
+    text: "Search"
+    },
+    {
+    href: "download",
+    text: "Downloads"
+    },
+    {
+    href: "about",
+    text: "About"
+    },
+    {
+    href: "help",
+    text: "Help"
+    },
+    {
+    href: "news",
+    text: "News",
+    active: true
+    }
+    ],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+            will help us to improve it.
+        </span>
+    </p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="landing">Home</a></li>
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="news">News</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            System update
+                <span class="gias-news-heading--date">28 June 2022</span>
+        </h1>
+        <p>An updated version of the Get Information about Schools (GIAS) service has been released to all users. You do not need to take any specific action unless otherwise indicated below.</p>
+<p>This release includes the following improvements:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>
+Bug fixes and fine-tuning to improve the overall user experience, including:
+<ul class="govuk-list govuk-list--bullet">
+<li>New primary button on the download page.</li>
+<li>Pagination degradation added.</li>
+</ul>
+</li>
+</ul>
+<br>
+<p><strong>Office for National Statistics (ONS) frequency update</strong></p>
+<p>As stated in the last news update, we are increasing the frequency update of the following reference data we use from ONS from yearly to quarterly following the release of the May data from ONS: </p>
+<ul class="govuk-list govuk-list--bullet">
+<li>District</li>
+<li>Ward</li>
+<li>Parliamentary constituency</li>
+<li>Urban/rural description</li>
+<li>Middle super output area (MSOA)</li>
+<li>Lower super output area (LSOA)</li>
+</ul>
+<p>The ONS May update has been completed.</p>
+<p>Users are not expected to need to take any specific action unless otherwise indicated.</p>
+<p>A post release note will follow.</p>
+<p><strong>Further information</strong></p>
+<p>The yearly update of data from the underlying data of the <a href="#">schools, pupils and their characteristics statistical publication</a> will take place shortly over several days. A notice will be added to the service whilst this work is undertaken and then updated once all work is completed.</p>
+<p>The fields that will be updated are the:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>Total number of pupils</li>
+<li>Total number of boys</li>
+<li>Total number of girls</li>
+<li>Number of pupils eligible for free school meals (FSM)</li>
+<li>Percentage of children eligible for free school meals (FSM)</li>
+</ul>
+    </div>
+</div>
+
+
+
+{% endblock %}
