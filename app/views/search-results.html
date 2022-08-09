@@ -149,30 +149,47 @@ containerClasses: "govuk-width-container"
         </div>
       </div>
 
-      <div class="govuk-option-select radius-filter js-collapsible no-scroll" data-closed-on-load="false" id="option-select-radius" data-bind-alias="aa" role="search">
+      <div class="govuk-option-select radius-filter js-collapsible no-scroll" data-closed-on-load="false"
+        id="option-select-radius" data-bind-alias="aa" role="search">
         <button class="js-container-head" aria-expanded="true" aria-controls="option-select-radius">
-            <div class="option-select-label">Within radius of</div>
-            <div class="js-selected-counter"></div>
+          <div class="option-select-label">Within radius of</div>
+          <div class="js-selected-counter"></div>
         </button>
         <div class="options-container">
-            <div class="js-auto-height-inner">
-                <fieldset class="govuk-fieldset range-group">
-                    <div class="govuk-form-group">
-                        <legend class="govuk-visually-hidden">Enter the radius in miles</legend>
-                        <span class="inline-form-control">
-                            <label for="RadiusInMiles" class="govuk-visually-hidden">Radius in miles</label>
-                            <input type="text" id="RadiusInMiles" name="aa" value="3" class="govuk-input govuk-input--width-5" maxlength="5">
-                            &nbsp;miles
-                            <a href="#" class="govuk-button govuk-button--secondary filter-button" data-module="govuk-button">Apply</a>
-                        </span>
-                    </div>
-                </fieldset>
-            </div>
-                <a href="#results-container" class="govuk-visually-hidden-focusable gias-filter-skip-link">Skip to results</a>
+          <div class="js-auto-height-inner">
+            <fieldset class="govuk-fieldset range-group">
+              <div class="govuk-form-group">
+                <legend class="govuk-visually-hidden">Enter the radius in miles</legend>
+                <span class="inline-form-control">
+                  <label for="RadiusInMiles" class="govuk-visually-hidden">Radius in miles</label>
+                  <input type="text" id="RadiusInMiles" name="aa" value="3" class="govuk-input govuk-input--width-5"
+                    maxlength="5">
+                  &nbsp;miles
+                  <a href="#" class="govuk-button govuk-button--secondary filter-button"
+                    data-module="govuk-button">Apply</a>
+                </span>
+              </div>
+            </fieldset>
+          </div>
+          <a href="#results-container" class="govuk-visually-hidden-focusable gias-filter-skip-link">Skip to results</a>
         </div>
-    </div>
+      </div>
 
-    
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Establishment type
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <p class='govuk-body'>This is the content for Writing well for the web.</p>
+    </div>
+  </div>
+  </div>
 
     </div>
 
@@ -300,7 +317,6 @@ containerClasses: "govuk-width-container"
       </div>
 
     </div>
-
 
   </div>
 </div>
