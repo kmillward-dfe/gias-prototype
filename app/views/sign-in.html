@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+DfE Sign-In
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+    improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: "DfE Sign-In",
+serviceUrl: "/",
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+            will help us to improve it.
+        </span>
+    </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<main id="main-content" class="govuk-main-wrapper" role="main">
+    
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">
+                    Department for Education Sign-in
+                </h1>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+                    <p class="govuk-body">DfE Sign-in is your gateway to several important services in the education sector.</p>
+                
+                <form method="post" id="form-signin" class="form-signin" novalidate="novalidate">
+                    <input type="hidden" name="_csrf" value="vWD0TzNI-ey4FU1DQyxatVuRdu1CTdRrZmNo">
+                    <input type="hidden" name="clientId" value="GIAS">
+                    <input type="hidden" name="redirectUri" value="https://gias.signin.education.gov.uk/oidc/cb">
+                    
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-visually-hidden">Sign-in</legend>
+    
+                        <div class="govuk-form-group ">
+                            
+                                <label class="govuk-label govuk-label--s" for="username">Email address</label>
+                            
+                            
+                            <input class="govuk-input govuk-!-width-three-quarters" id="username" name="username" type="text" value="">
+                        </div>
+    
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label govuk-label--s" for="password">Password</label>
+                            
+                            <input class="password-input govuk-input govuk-!-width-three-quarters govuk-!-margin-right-1" id="password" name="password" type="password"><button type="button" class="show-password govuk-button govuk-button--secondary govuk-!-margin-bottom-1" aria-label="Show password">Show</button>
+                            
+                            <p class="govuk-body">
+                                <a class="govuk-link govuk-!-font-weight-bold" href="/078a9549-c323-4c78-89bc-4694da6eaf86/resetpassword/request?clientid=GIAS&amp;redirect_uri=https://gias.signin.education.gov.uk/oidc/cb">
+                                    Forgotten your password?
+                                </a>    
+                            </p>
+                        </div>
+    
+                        <div class="govuk-inset-text">
+                            <p class="govuk-body">By signing in you accept our <a class="govuk-link govuk-!-font-weight-bold" href="/terms">terms and conditions</a>.</p>
+                        </div>
+    
+                    </fieldset>
+    
+                    <div class="govuk-button-group">
+                        <button type="submit" class="govuk-button">
+                            Sign in
+                            <span class="loader spinner-inline vh">
+                                <span class="ball b-1"></span>
+                                <span class="ball b-2"></span>
+                                <span class="ball b-3"></span>
+                            </span>
+                        </button>
+                        
+                            <a class="govuk-button govuk-button--secondary" href="https://profile.signin.education.gov.uk/register" role="button">Create account</a>
+                        
+                    </div>
+    
+                </form>
+            </div>
+        </div>
+    
+
+</main>
+
+{% endblock %}

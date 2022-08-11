@@ -1,0 +1,1256 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+    improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+href: "http://localhost:3000/landing",
+text: "Home"
+},
+{
+href: "../search",
+text: "Search"
+},
+{
+href: "../download",
+text: "Downloads"
+},
+{
+href: "../about",
+text: "About"
+},
+{
+href: "../help",
+text: "Help",
+active: true
+},
+{
+href: "../news",
+text: "News"
+}
+],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+            will help us to improve it.
+        </span>
+    </p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Glossary</h1>
+        <p>The sections below give explanations for terms commonly used on this site. Select the first letter of the
+            term you're searching for.</p>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <div class="govuk-accordion__controls"><button type="button" class="govuk-accordion__open-all"
+                    aria-expanded="false">Open all<span class="govuk-visually-hidden"> sections</span></button></div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-A" aria-controls="accordion-default-content-1"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            A
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-A" class="govuk-accordion__section-content" aria-labelledby="ctrl-A">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Academies Financial Handbook</h2>
+                            <div class="gias-user-content">
+                                <p>This has been replaced with the academies trust handbook.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Academy</h2>
+                            <div class="gias-user-content">
+                                <p>Academies are publicly funded independent schools. They don’t have to follow the
+                                    national curriculum and can set their own term times. They still have to follow the
+                                    same rules on admissions, special educational needs and exclusions as other state
+                                    schools. Academies get money directly from the government, not the local council.
+                                    They’re run by an academy trust which employs the staff. Some academies have
+                                    sponsors such as businesses, universities, other schools, faith groups or voluntary
+                                    groups. Sponsors are responsible for improving the performance of their schools.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Academy converter</h2>
+                            <div class="gias-user-content"><p>Former schools which have chosen to convert to academy
+                                status.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Academy special</h2>
+                            <div class="gias-user-content"><p>These are special schools which have chosen to become an
+                                academy. These will be handled differently to academy converters and will follow a
+                                different process which is currently being developed.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Academy sponsor led</h2>
+                            <div class="gias-user-content"><p>These academies are established and managed by sponsors from
+                                a wide range of backgrounds, including high performing schools and colleges,
+                                universities, individual philanthropists, businesses, the voluntary sector, and the
+                                faith communities.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Academy Trust Handbook (previously known as the Academies
+                                Financial Handbook)</h2>
+                            <div class="gias-user-content"><p>A handbook produced by the Education and Skills Funding
+                                Agency (ESFA) that sets out the requirements that apply to academy trusts. It provides
+                                an overarching framework for implementation of effective financial management and other
+                                controls, consistent with academy trust obligations as publicly funded bodies. Read this
+                                <a href="#">handbook</a> if you have
+                                responsibility for governing, managing, or auditing an academy trust.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Accounting officer</h2>
+                            <div class="gias-user-content"><p>Responsible for ensuring that public money is spent as
+                                intended, ensuring value for money and keeping proper records.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Admissions policy</h2>
+                            <div class="gias-user-content"><p>All establishments have an admissions policy to decide which
+                                children get places. For state-maintained schools, these may be set by the local
+                                council. Many establishments, for example independent schools, have their own admissions
+                                policies.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">All-through school</h2>
+                            <div class="gias-user-content"><p>All-through is a school that includes the primary and
+                                secondary years and therefore covers all compulsory school years (including reception).</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Attainment 8</h2>
+                            <div class="gias-user-content"><p>Attainment 8 measures a pupil's achievements across 8
+                                qualifications including maths and English.</p> <a
+                                    href="#">Find
+                                    out more.</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-B" aria-controls="accordion-default-content-2"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            B
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-B" class="govuk-accordion__section-content" aria-labelledby="ctrl-B">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Boarding provision</h2>
+                            <div class="gias-user-content"><p>Places for boarders are offered at some establishments.
+                                National minimum standards are in place to ensure that boarding schools safeguard and
+                                protect the children in their care.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">British Schools Overseas</h2>
+                            <div class="gias-user-content"><p>British schools overseas are a diverse collection of
+                                institutions which, in varying degrees, provide instruction in English, have teachers
+                                who are native English speakers and which prepare their pupils either for British public
+                                examinations and/or for entrance to British universities.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-C" aria-controls="accordion-default-content-3"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            C
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-C" class="govuk-accordion__section-content" aria-labelledby="ctrl-C">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Capacity</h2>
+                            <div class="gias-user-content"><p>The number of pupils the school is organised to provide for.
+                                For academies the capacity refers to the planned capacity as stated in the academy's
+                                funding agreement.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Chair of governors</h2>
+                            <div class="gias-user-content"><p>Responsible for leading and developing the team of governors,
+                                managing performance and headteacher recruitment.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Chair of local governing body</h2>
+                            <div class="gias-user-content"><p>The person in charge of a trust responsible for multiple
+                                establishments. The body can include parent, staff and pupil representatives.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Chair of trustees</h2>
+                            <div class="gias-user-content"><p>Broadly speaking, the equivalent of a chair of governors, but
+                                for an academy. They are accountable to regional schools commissioners, rather than
+                                local authorities.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Chief financial officer</h2>
+                            <div class="gias-user-content"><p>The lead finance professional appointed by the academy trust
+                                board.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Children looked after</h2>
+                            <div class="gias-user-content"><p>Children who have been in the care of local authorities for
+                                at least one day in the last 6 years, or who have been adopted from care.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Children's centre</h2>
+                            <div class="gias-user-content"><p>A centre offering early childhood services, including
+                                education, childcare, social services and health services.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Children's centre collaboration</h2>
+                            <div class="gias-user-content"><p>A group of centres which share early childhood services, but
+                                do not share leadership and management.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Children's centre group</h2>
+                            <div class="gias-user-content"><p>A group of centres offering early childhood services,
+                                including education, childcare, social services and health services. They also share
+                                leadership and management.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Children's centre linked site</h2>
+                            <div class="gias-user-content"><p>Formerly children's centres in their own right, but they no
+                                longer meet the statutory definition of a children’s centre. However, they offer some
+                                early childhood services on behalf of another children's centre.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">City technology colleges</h2>
+                            <div class="gias-user-content"><p>These are independent schools in urban areas that are free to
+                                go to. They’re owned and funded by companies as well as central government (not the
+                                local council). They have an emphasis on technological and practical skills.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Coasting</h2>
+                            <div class="gias-user-content"><p>A school is described as 'coasting' if it does not support
+                                its pupils to achieve their potential. Signs of coasting include the pupils'
+                                performance, especially in English and maths, falling below certain standards.</p> <a
+                                    href="#">Read
+                                    more about coasting.</a></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">College</h2>
+                            <div class="gias-user-content"><p>Colleges generally focus on education for 16-18 year olds.
+                                They provide vocational and academic courses and some also offer full-time study at key
+                                stage 4.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Community school</h2>
+                            <div class="gias-user-content"><p>In these schools, the local authority employs the school's
+                                staff, owns the school's land and buildings and is the admissions authority (it has
+                                primary responsibility for deciding the arrangements for admitting pupils).</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Community special school</h2>
+                            <div class="gias-user-content"> <p>This is the special school equivalent of a mainstream
+                                community school. It caters wholly or mainly for children with special educational
+                                needs.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Companies House number</h2>
+                            <div class="gias-user-content"><p>A registration number issued by Companies House for
+                                companies.
+
+                                With respect to GIAS they are visible for single academy trusts (SATs) and multi academy
+                                trusts (MATs) (group level) and for online providers only at establishment level. </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-D" aria-controls="accordion-default-content-4"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            D
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-D" class="govuk-accordion__section-content" aria-labelledby="ctrl-D">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">DfE number</h2>
+                            <div class="gias-user-content"> <p>The DfE number, is also known as:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+
+                                <li>The Department for Education number, the Department for Education no, the DfE no;</li> 
+
+                                <li> the DfE establishment number, the DfE establishment no, the DfE estab number, the DfE
+                                estab no;</li>
+
+                                <li>the local authority establishment number, the local authority establishment no, the
+                                local authority estab number, the local authority estab no;</li>
+
+                                <li>the LA establishment number, the LA establishment no, the LA estab number, the LA
+                                estab no (however this is one part of the two components that make the DfE number – see
+                                below);</li>
+
+                                <li>the establishment number, the establishment no, the estab number, the estab no
+                                (however this is one part of the two components that make the DfE number – see below).</li>
+
+                            </ul>
+
+                               <p> The DfE number is a concatenation of a 3 digit local authority number (the local
+                                authority that administers the establishment) and a 4 digit establishment number. This
+                                creates a 7 digit number. This number is issued by DfE to all local authority nurseries
+                                and compulsory school aged educational establishments, including further education
+                                colleges, that are recorded on Get Information about Schools (GIAS). </p>
+
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Diocese</h2>
+                            <div class="gias-user-content"><p>This is the area covered by a Bishop's jurisdiction and only
+                                applies to Catholic and Church of England schools.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Disadvantaged</h2>
+                            <div class="gias-user-content"><p>Pupils may be defined as disadvantaged if:</p>
+
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>they are known to have been eligible for free school meals in the past 6 years
+                                        (from year 6 to year 11), or</li>
+                                    <li>they are recorded as having been looked after for at least one day, or</li>
+                                    <li>they are recorded as having been adopted from care</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-E" aria-controls="accordion-default-content-5"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            E
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-E" class="govuk-accordion__section-content" aria-labelledby="ctrl-E">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">English additional language</h2>
+                            <div class="gias-user-content"><p>This refers to children who were initially exposed to a
+                                non-English language during early development and continue to be exposed to this
+                                language in the home or in the community.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">English first language</h2>
+                            <div class="gias-user-content"><p>This refers to children who were initially exposed to English
+                                during early development and continue to be exposed to English in the home or in the
+                                community.</p> </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Establishment accreditation date</h2>
+                            <div class="gias-user-content"><p>The date the online provider is given accreditation by the
+                                department.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Establishment accreditation date ended</h2>
+                            <div class="gias-user-content"><p>The date the online provider has their accreditation
+                                withdrawn. The online provider can no longer use the term accredited online provider.
+                           </p> </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Establishment accredited</h2>
+                            <div class="gias-user-content"><p>For online providers only and confirms if the online provider
+                                is accredited or not.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Establishment name</h2>
+                            <div class="gias-user-content"><p>For all establishment types except online provider (see name
+                                of setting).</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Establishment number</h2>
+                            <div class="gias-user-content"><p>The establishment number is also known as the establishment
+                                no, the estab number, the estab no.
+                                The establishment number is a 4 digit number.
+                                The number is assigned by the DfE to all local authority nurseries and compulsory school
+                                aged educational establishments, including further education colleges, that are recorded
+                                on Get Information about Schools (GIAS).
+                                This number is combined with the 3 digit local authority number to create the 7 digit
+                                DfE number.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Establishment status</h2>
+                            <div class="gias-user-content"><p>For online provider, the status of open and open, propose to
+                                close means it is accredited.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Establishments</h2>
+                            <div class="gias-user-content"><p>A collective term for educational establishments such as
+                                children's centres, schools, colleges, and further education and higher education
+                                institutions.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">European schools</h2>
+                            <div class="gias-user-content"><p>European schools provide free education for the children of
+                                employees of European Union institutions. Where places are available, they admit other
+                                children on payment of fees.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-F" aria-controls="accordion-default-content-6"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            F
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-F" class="govuk-accordion__section-content" aria-labelledby="ctrl-F">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Faith school</h2>
+                            <div class="gias-user-content"><p>Faith schools have to follow the national curriculum, but
+                                they can choose what they teach in religious studies. Faith schools may have different
+                                admissions criteria and staffing policies to state schools, although anyone can apply
+                                for a place.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Federation</h2>
+                            <div class="gias-user-content"><p>The aim of a federation is to address or prevent school
+                                failure, achieve economies of scale and to offer pupils greater choice.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Foundation school</h2>
+                            <div class="gias-user-content"><p>In these schools, the governing body is the employer and the
+                                admissions authority. The school's land and buildings are either owned by the governing
+                                body or by a charitable foundation.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Foundation special school</h2>
+                            <div class="gias-user-content"><p>A special school equivalent of the mainstream foundation
+                                school catering wholly or mainly for children with special educational needs.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Free school</h2>
+                            <div class="gias-user-content"><p>Free schools are funded by the government but aren't run by
+                                the local council. They have more control over how they do things. They're 'all-ability'
+                                schools, so can't use academic selection processes like a grammar school. Free schools
+                                can set their own pay and conditions for staff and change the length of school terms and
+                                the school day. They don't have to follow the national curriculum.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Free school meals</h2>
+                            <div class="gias-user-content"><p>This shows whether a pupil's family have claimed eligibility
+                                for free school meals as reported in the annual spring school census. Parents are able
+                                to claim free school meals if they receive a qualifying benefit. This does not show
+                                pupils who actually received free school meals but those who are eligible to receive
+                                them. </p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-G" aria-controls="accordion-default-content-7"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            G
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-G" class="govuk-accordion__section-content" aria-labelledby="ctrl-G">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">GID</h2>
+                            <div class="gias-user-content"><p>Governor identity. Used to identify governors, for example if
+                                2 governors have the same name, this number identifies each of them.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Governor</h2>
+                            <div class="gias-user-content"><p>At local authority maintained schools, governors hold the
+                                headteacher to account for performance and oversee the use of resources.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-I" aria-controls="accordion-default-content-8"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            I
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-I" class="govuk-accordion__section-content" aria-labelledby="ctrl-I">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Independent school</h2>
+                            <div class="gias-user-content"><p>Also known as 'private schools', these schools charge fees to
+                                attend instead of being funded by the government. Pupils don't have to follow the
+                                national curriculum. All independent schools must be registered with the government and
+                                are inspected regularly.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Independent special school</h2>
+                            <div class="gias-user-content"><p>This is equivalent to an independent school, catering wholly
+                                or mainly for children with special educational needs.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-L" aria-controls="accordion-default-content-9"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            L
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-L" class="govuk-accordion__section-content" aria-labelledby="ctrl-L">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">LAESTAB</h2>
+                            <div class="gias-user-content"><p>Local authority establishment. A 3-digit local authority
+                                code, followed by a 4-digit establishment code.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Local authority number</h2>
+                            <div class="gias-user-content"><p>The local authority number is also known as the local
+                                authority no, the LA number, the LA no.
+                                The local authority number is a 3 digit number assigned to each local authority.
+                                This number is combined with the 4 digit establishment number to create the 7 digit DfE
+                                number</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Local authority nursery school</h2>
+                            <div class="gias-user-content"><p>A nursery school maintained by a local authority which
+                                provides education for children over 2 but under compulsory school age.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Local governor</h2>
+                            <div class="gias-user-content"><p>A governor on a trust responsible for multiple
+                                establishments.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-M" aria-controls="accordion-default-content-10"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            M
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-M" class="govuk-accordion__section-content" aria-labelledby="ctrl-M">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Member</h2>
+                            <div class="gias-user-content"><p>The upper tier of the academy governance structure. They can
+                                appoint and remove trustees and make sure the academy's objectives are being met.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Middle deemed primary</h2>
+                            <div class="gias-user-content"><p>A former middle school which has been deemed primary because
+                                most of its pupils are of primary school age.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Middle deemed secondary</h2>
+                            <div class="gias-user-content"><p>A former middle school which has been deemed secondary
+                                because most of its pupils are of secondary school age.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Multi academy trust (MAT)</h2>
+                            <div class="gias-user-content"><p>A trust responsible for a number of academies. It consists of
+                                members, akin to company shareholders, and trustees, responsible for governance.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-N" aria-controls="accordion-default-content-11"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            N
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-N" class="govuk-accordion__section-content" aria-labelledby="ctrl-N">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Name of setting</h2>
+                            <div class="gias-user-content"><p>The name of the online provider establishment.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Non-maintained special school</h2>
+                            <div class="gias-user-content"><p>These are run on a not-for-profit basis by charitable trusts
+                                and normally cater for children with severe and/or low incidence special educational
+                                needs. They get the majority of their funding from local authorities placing children
+                                with special educational needs statements at the schools and paying the fees.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Nursery provision</h2>
+                            <div class="gias-user-content"><p>This is when an establishment offers nursery classes, usually
+                                for 3 and 4 year old children.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-O" aria-controls="accordion-default-content-12"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            O
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-O" class="govuk-accordion__section-content" aria-labelledby="ctrl-O">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Online providers</h2>
+                            <div class="gias-user-content"><p>The term online provider refers to a provider of online
+                                education services which operates online-only on a permanent basis, delivering a
+                                full-time education, a full curriculum, and representing at least one child's main
+                                source of education.
+
+                                Online providers are registered under the online education accreditation scheme. To be
+                                eligible for the scheme, an online provider must have at least one learner of compulsory
+                                school age in England. The scheme is restricted only to online providers that are
+                                registered in the UK with Companies House or the Charity Commission.
+
+                                Where we refer to a 'provider', we are referring to a provider of online education
+                                services. The term is not to be interpreted as meaning a provider of education under the
+                                Education and Skills Act 2008 or any other relevant Act.
+
+                                Providers of online education services will often be commissioned services that hold
+                                responsibility for the delivery of education services only; other education providers,
+                                such as independent schools, may have additional responsibilities as a result of their
+                                operation from physical premises and the physical presence of pupils. Establishments
+                                delivering remote education, such as online classes, resulting from the COVID-19
+                                pandemic, are not impacted by the online education accreditation scheme as they are not
+                                categorised as this establishment type. </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-P" aria-controls="accordion-default-content-13"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            P
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-P" class="govuk-accordion__section-content" aria-labelledby="ctrl-P">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Primary school</h2>
+                            <div class="gias-user-content"><p>Primary school is defined in section 5 of the</p> <a
+                                    href="#">Education Act 1996.</a> <p>(along
+                                with sections 2 to 4).</p>
+                                <p>In summary, it is a school for providing one or more of the following:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                <li> part or full-time education aimed at children who are at least two years old but under
+                                compulsory school age;</li>
+                                <li> full-time education aimed at children of compulsory school age who are under 10½ years
+                                old;</li>
+                                <li> full-time education aimed at children of compulsory school age who are 10½ to 11 years
+                                old and are taught together with children under 10½.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Progress 8</h2>
+                            <div class="gias-user-content"><p>Progress 8 measures a pupil's progress across 8
+                                qualifications including maths and English.</p> <a
+                                    href="#">Find
+                                    out more.</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Pupil referral unit</h2>
+                            <div class="gias-user-content"><p>A pupil referral unit (PRU) is established and maintained by
+                                a local authority to provide education for children who are excluded, sick or otherwise
+                                unable to attend mainstream school. It is not a special or other type of school.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-Q" aria-controls="accordion-default-content-14"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            Q
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-Q" class="govuk-accordion__section-content" aria-labelledby="ctrl-Q">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Quality assurance body</h2>
+                            <div class="gias-user-content"><p>The quality assurance body for online providers only.
+
+                                This is still to be confirmed.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Quality assurance report</h2>
+                            <div class="gias-user-content"><p>The quality assurance body report on the online provider.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-R" aria-controls="accordion-default-content-15"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            R
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-R" class="govuk-accordion__section-content" aria-labelledby="ctrl-R">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Religious character</h2>
+                            <div class="gias-user-content"><p>A school designated with a religious character has to follow
+                                the national curriculum, but it can choose what to teach in religious studies.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-S" aria-controls="accordion-default-content-16"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            S
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-S" class="govuk-accordion__section-content" aria-labelledby="ctrl-S">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">School sponsor</h2>
+                            <div class="gias-user-content"><p>Sponsors include businesses, charities and faith
+                                organisations. They are responsible for:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>the performance and finances of their school (or group of schools)</li>
+                                    <li>setting up the academy trust</li>
+                                    <li>selecting the governing body</li>
+                                    <li>recruiting the headteacher</li>
+                                </ul>
+                                <p> Sponsors work closely with the governing body to run the academy.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Secondary school</h2>
+                            <div class="gias-user-content"><p>Secondary school is defined in section 5 of the</p> <a
+                                    href="">Education Act 1996.</a> <p>(along
+                                with sections 2 to 4).</p>
+                               <p> In summary, it is a school for providing one or more of the following:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                <li> full-time education aimed at children of compulsory school age who are 10½ to 11 years
+                                old and are taught together with children aged 12 and above;</li>
+                                <li>full-time education aimed at children of compulsory school age who are at least 12
+                                years old.</li>
+                                </ul>
+                                <p>In some circumstances it can also include part-time education for pupils who are
+                                receiving the rest of their secondary education elsewhere, full-time education for
+                                pupils over compulsory school age but under 19, and education for pupils aged 19 or
+                                older who are finishing courses they started at the school before turning 19.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">SEN support</h2>
+                            <div class="gias-user-content"><p>See 'Special educational needs'. This is when the school
+                                gives children extra or different help from its usual curriculum. Outside specialists
+                                may advise or support the class teacher and SEN coordinator.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Single academy trust (SAT)</h2>
+                            <div class="gias-user-content"><p>A trust responsible for a single academy. It consists of
+                                members, akin to company shareholders, and trustees, responsible for governance.
+                                In a single academy trust (SAT), one school becomes an academy, or two schools combine
+                                to form a single academy.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Sixth form college</h2>
+                            <div class="gias-user-content"><p>An educational institution, funded by the Learning Skills
+                                Council, for 16-19 year olds.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Sixth form provision</h2>
+                            <div class="gias-user-content"><p>Places for sixth form pupils are available both at
+                                establishments catering for a wider age range of pupils and at dedicated sixth form
+                                colleges.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Special educational needs (SEN)</h2>
+                            <div class="gias-user-content"><p>This refers to pupils who have learning difficulties or
+                                disabilities that make it harder for them to learn than most children of the same age.
+                                There's a formal assessment to decide if a pupil needs a statement of SEN or an
+                                education, health and care (EHC) plan.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Special measures</h2>
+                            <div class="gias-user-content">
+                                <p>This is when OFSTED judges that a school is failing, or likely to fail, to provide an
+                                    acceptable standard of education.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Special post-16 institutions</h2>
+                            <div class="gias-user-content"><p>Special post-16 institutions which are legally established to
+                                provide education and are not maintained schools or FE colleges, which provide
+                                specialist post-16 education and support to young people with some of the most severe
+                                learning difficulties and/or disabilities or low incidence needs.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Sponsor</h2>
+                            <div class="gias-user-content"><p>An academy sponsor is an organisation or person approved by
+                                the Department for Education to support an underperforming academy or group of
+                                academies. Sponsors are generally businesses, charitable trusts, church groups or other
+                                educational institutions.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Studio school</h2>
+                            <div class="gias-user-content"><p>Small free schools - usually with around 300 pupils -
+                                delivering mainstream qualifications through project-based learning. This means working
+                                in realistic situations as well as learning academic subjects.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-T" aria-controls="accordion-default-content-17"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            T
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-T" class="govuk-accordion__section-content" aria-labelledby="ctrl-T">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Trustee</h2>
+                            <div class="gias-user-content"><p>Trustees are broadly the equivalent of governors, but for
+                                academies. They hold the headteacher to account for performance and oversee the use of
+                                resources. They are both company directors and charity trustees.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-U" aria-controls="accordion-default-content-18"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            U
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-U" class="govuk-accordion__section-content" aria-labelledby="ctrl-U">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">UKPRN</h2>
+                            <div class="gias-user-content"><p>UK provider reference number. A reference number issued by
+                                the UK Register of Learning Providers.</p></div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Unique Reference Number (URN)</h2>
+                            <div class="gias-user-content"><p>The URN is a sequential and unique number automatically
+                                assigned by the DfE's Get Information about Schools (GIAS) system when a record is
+                                created. Children centres are 5 digits and start with a 2. Welsh establishments are 6
+                                digits and start with a 4. All other establishments are 6 digits and start with a 1. </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">University technical college</h2>
+                            <div class="gias-user-content"><p>These are a kind of free school specialising in subjects like
+                                engineering and construction. They usually teach these subjects along with business
+                                skills and IT.
+                                Pupils study academic subjects as well as practical subjects leading to technical
+                                qualifications. The curriculum is designed by the university and employers, who also
+                                provide work experience for students.
+                                University technical colleges are sponsored by:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>universities</li>
+                                    <li>employers</li>
+                                    <li>further education colleges</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+
+                        <button type="button" id="ctrl-V" aria-controls="accordion-default-content-19"
+                            class="govuk-accordion__section-button" aria-expanded="false">
+                            V
+                            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+                    </h2>
+                </div>
+                <div id="target-V" class="govuk-accordion__section-content" aria-labelledby="ctrl-V">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-2">
+                            <h2 class="govuk-heading-s">Voluntary aided school</h2>
+                            <div class="gias-user-content"><p>A school where the governing body is the employer and the
+                                admissions authority. The school's land and buildings (apart from playing fields which
+                                are normally owned by the local authority) will normally be owned by a charitable
+                                foundation.</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="govuk-accordion__controls"><button type="button" class="govuk-accordion__open-all"
+                aria-expanded="false">Open all<span class="govuk-visually-hidden"> sections</span></button></div>
+        <p class="no-js-show-block"> <a class="back-to-top-link" href="#top">
+                <svg role="presentation" focusable="false" class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg"
+                    width="13" height="17" viewBox="0 0 13 17">
+                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                </svg>
+                Back to top
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

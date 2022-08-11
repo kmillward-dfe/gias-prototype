@@ -1,0 +1,517 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+    improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+href: "http://localhost:3000/landing",
+text: "Home"
+},
+{
+    href: "search",
+    text: "Search"
+    },
+    {
+    href: "download",
+    text: "Downloads",
+    active: true
+    },
+    {
+    href: "about",
+    text: "About"
+    },
+    {
+    href: "help",
+    text: "Help"
+    },
+    {
+    href: "news",
+    text: "News"
+    }
+    ],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+            will help us to improve it.
+        </span>
+    </p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-padding-bottom-6">
+            
+            <h1 class="govuk-heading-xl" id="downloadsTitle">Files available to download from 21 July 2022</h1>
+            <p>
+                This data is updated daily. The data fields and the order of the data fields can change in these
+                downloads.
+                If you need data in a prescribed format you should consider signing up for WebServices by submitting a
+                <a href="#"
+                    target="_blank" rel="noreferrer noopener">
+                    Service Request (opens in new tab)</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="gias-tabs-wrapper">
+        <div class="tab-content-wrapper gias-tabs-content">
+            <div id="group-data" class="tab-content" tabindex="0" aria-hidden="false">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-third">
+                        <a href="#results-container" class="govuk-visually-hidden-focusable">Skip filters</a>
+                        <form id="download-filters">
+                            <input id="Skip" name="Skip" type="hidden" value="">
+                            <fieldset class="govuk-fieldset" id="download-radios">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Select an option
+                                </legend>
+                                <div class="govuk-form-group govuk-!-margin-bottom-2">
+                                    <div class="govuk-radios govuk-radios--small govuk-radios--conditional"
+                                        data-module="govuk-radios">
+                                        <div class="govuk-radios__item gias-radio__item--bordered-filter">
+
+                                            <input checked="checked" class="govuk-radios__input"
+                                                data-aria-controls="Latest" id="search-type-Latest" name="SearchType"
+                                                type="radio" value="Latest">
+                                            <label class="govuk-label govuk-radios__label"
+                                                for="search-type-Latest">Latest</label>
+                                        </div>
+                                        <div class="govuk-radios__item gias-radio__item--bordered-filter">
+
+                                            <input class="govuk-radios__input" id="search-type-DateFilter"
+                                                name="SearchType" type="radio" value="DateFilter"
+                                                aria-controls="DateFilter" aria-expanded="false">
+                                            <label class="govuk-label govuk-radios__label"
+                                                for="search-type-DateFilter">Select a date</label>
+                                        </div>
+
+                                        <div id="DateFilter"
+                                            class="govuk-radios__conditional govuk-radios__conditional--hidden gias-conditional--bordered">
+                                            <div class="date-filters    " id="filterDate">
+                                                <p class="govuk-!-padding-right-2">
+                                                    Files can be downloaded from<br>
+                                                    11 September 2020 to present
+                                                </p>
+
+                                                <div class="govuk-form-group create-edit-form-group date-group     ">
+                                                    <fieldset class="govuk-fieldset range-group search-to-date">
+                                                        
+                                                        <p class="govuk-hint">For example, 11 09 2020</p>
+
+
+                                                        <div class="govuk-date-input">
+                                                            <div class="govuk-date-input__item">
+                                                                <div class="govuk-form-group">
+
+
+                                                                    <label
+                                                                        class="govuk-label govuk-label govuk-date-input__label"
+                                                                        for="FilterDate_Day">Day</label>
+                                                                    <input class=" govuk-input -day govuk-input--width-2" id="FilterDate_Day"
+                                                                 name="FilterDate.Day" type="text"
+                                                                        value="21">
+                                                                </div>
+                                                            </div>
+                                                            <div class="govuk-date-input__item">
+                                                                <div class="govuk-form-group">
+                                                                    <label
+                                                                        class="govuk-label govuk-label govuk-date-input__label"
+                                                                        for="FilterDate_Month">Month</label>
+                                                                    <input class=" govuk-input -month govuk-input--width-2"
+                                                                        id="FilterDate_Month" 
+                                                                        name="FilterDate.Month" type="text" value="7">
+                                                                </div>
+                                                            </div>
+                                                            <div class="govuk-date-input__item gias-year-input__item">
+                                                                <div class="govuk-form-group">
+                                                                    <label
+                                                                        class="govuk-label govuk-label govuk-date-input__label"
+                                                                        for="FilterDate_Year">Year</label>
+                                                                    <input class=" govuk-input -year govuk-input--width-4"
+                                                                        id="FilterDate_Year" 
+                                                                        name="FilterDate.Year" type="text" value="2022">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+
+
+                                                <div class="js-show-block">
+                                                    <button type="submit" name="apply"
+                                                        class="govuk-button downloads-filter-button"
+                                                        id="filter-apply">Apply</button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="govuk-form-group no-js-show-block">
+                                    <button type="submit" name="action" class="govuk-button "
+                                        id="filter-submit">Update</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="govuk-grid-column-two-thirds" id="results-container">
+
+
+                        <span></span>
+                        <p>Select the files you want to download then click 'Download selected files'.</p>
+                        <details class="govuk-details govuk-!-margin-bottom-4" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Why can't I see the files I'm looking for?
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p>Some of the historical downloadable files may not be available for this date.</p>
+                                <p>This is normally for one of the following reasons:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>The files were not introduced until a later date</li>
+                                    <li>A technical issue resulted in the files not being generated on this date</li>
+                                    <li>The files were only available as public download and not specific scheduled
+                                        extracts</li>
+                                </ul>
+                            </div>
+                        </details>
+                        <div class="govuk-details govuk-!-margin-bottom-4 js-show-block">
+                            <a href="#" class="govuk-!-margin-right-4" id="select-all" role="button">Select all</a>
+                            <a href="#" id="clear-all" role="button">Clear all</a>
+                        </div>
+                        <form action="#" method="post"><input id="Skip" name="Skip" type="hidden"
+                                value=""><input id="SearchType" name="SearchType" type="hidden" value="Latest"><input
+                                id="FilterDate_Day" name="FilterDate.Day" type="hidden" value="21"><input
+                                id="FilterDate_Month" name="FilterDate.Month" type="hidden" value="7"><input
+                                id="FilterDate_Year" name="FilterDate.Year" type="hidden" value="2022">
+                            <h2 class="govuk-heading-m">Establishment downloads</h2>
+                            <p>You can download the complete record for the specified establishment types. There's a
+                                separate file with links to any predecessor or successor establishments.</p>
+                            <div class="govuk-form-group">
+                                <h3 class="govuk-heading-s">All establishment data</h3>
+                                <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_0__Tag" name="Downloads[0].Tag" type="hidden"
+                                            value="all.edubase.data">
+                                        <input id="Downloads_0__FileGeneratedDate" name="Downloads[0].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[0].Selected" type="checkbox" name="Downloads[0].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.edubase.data|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[0].Selected" class="govuk-checkboxes__label">Establishment
+                                            fields CSV, 60.86 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_1__Tag" name="Downloads[1].Tag" type="hidden"
+                                            value="all.edubase.data.links">
+                                        <input id="Downloads_1__FileGeneratedDate" name="Downloads[1].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[1].Selected" type="checkbox" name="Downloads[1].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.edubase.data.links|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[1].Selected" class="govuk-checkboxes__label">Establishment
+                                            links CSV, 2.05 MB</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-form-group">
+                                <h3 class="govuk-heading-s">Open academies and free schools data</h3>
+                                <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_2__Tag" name="Downloads[2].Tag" type="hidden"
+                                            value="all.open.academies.and.free.schools">
+                                        <input id="Downloads_2__FileGeneratedDate" name="Downloads[2].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[2].Selected" type="checkbox" name="Downloads[2].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.open.academies.and.free.schools|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[2].Selected" class="govuk-checkboxes__label">Academies and
+                                            free school ﬁelds CSV, 4.08 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_3__Tag" name="Downloads[3].Tag" type="hidden"
+                                            value="all.open.academies.and.free.school.links">
+                                        <input id="Downloads_3__FileGeneratedDate" name="Downloads[3].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[3].Selected" type="checkbox" name="Downloads[3].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.open.academies.and.free.school.links|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[3].Selected" class="govuk-checkboxes__label">Academies and
+                                            free school links CSV, 0.68 MB</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-form-group">
+                                <h3 class="govuk-heading-s">Open state-funded schools data</h3>
+                                <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_4__Tag" name="Downloads[4].Tag" type="hidden"
+                                            value="all.open.state-funded.schools">
+                                        <input id="Downloads_4__FileGeneratedDate" name="Downloads[4].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[4].Selected" type="checkbox" name="Downloads[4].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.open.state-funded.schools|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[4].Selected" class="govuk-checkboxes__label">State-funded
+                                            school ﬁelds CSV, 8.81 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_5__Tag" name="Downloads[5].Tag" type="hidden"
+                                            value="all.open.state-funded.school.links">
+                                        <input id="Downloads_5__FileGeneratedDate" name="Downloads[5].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[5].Selected" type="checkbox" name="Downloads[5].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.open.state-funded.school.links|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[5].Selected" class="govuk-checkboxes__label">State-funded
+                                            school links CSV, 0.84 MB</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-form-group">
+                                <h3 class="govuk-heading-s">Open children's centres data </h3>
+                                <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_6__Tag" name="Downloads[6].Tag" type="hidden"
+                                            value="all.open.childrens.centres">
+                                        <input id="Downloads_6__FileGeneratedDate" name="Downloads[6].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[6].Selected" type="checkbox" name="Downloads[6].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.open.childrens.centres|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[6].Selected" class="govuk-checkboxes__label">Children's
+                                            centre ﬁelds CSV, 0.76 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_7__Tag" name="Downloads[7].Tag" type="hidden"
+                                            value="all.open.childrens.centres.links">
+                                        <input id="Downloads_7__FileGeneratedDate" name="Downloads[7].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[7].Selected" type="checkbox" name="Downloads[7].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.open.childrens.centres.links|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[7].Selected" class="govuk-checkboxes__label">All open
+                                            children's centres links.csv, 0.11 MB</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="govuk-heading-m">Establishment groups</h2>
+                            <p>You can download the complete record for the specified establishment group. There's a
+                                separate file with links to any establishments associated with the groups.</p>
+                            <div class="govuk-form-group">
+                                <h3 class="govuk-heading-s">All group data</h3>
+                                <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_8__Tag" name="Downloads[8].Tag" type="hidden"
+                                            value="academies.mat.membership">
+                                        <input id="Downloads_8__FileGeneratedDate" name="Downloads[8].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[8].Selected" type="checkbox" name="Downloads[8].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="academies.mat.membership|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[8].Selected" class="govuk-checkboxes__label">SAT and MAT
+                                            membership history CSV, 6.81 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_9__Tag" name="Downloads[9].Tag" type="hidden"
+                                            value="all.group.records">
+                                        <input id="Downloads_9__FileGeneratedDate" name="Downloads[9].FileGeneratedDate"
+                                            type="hidden" value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[9].Selected" type="checkbox" name="Downloads[9].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.group.records|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[9].Selected" class="govuk-checkboxes__label">All group
+                                            records.csv, 1.32 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_10__Tag" name="Downloads[10].Tag" type="hidden"
+                                            value="all.group.links.records">
+                                        <input id="Downloads_10__FileGeneratedDate"
+                                            name="Downloads[10].FileGeneratedDate" type="hidden"
+                                            value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[10].Selected" type="checkbox" name="Downloads[10].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.group.links.records|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[10].Selected" class="govuk-checkboxes__label">All group
+                                            links records.csv, 4.47 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_11__Tag" name="Downloads[11].Tag" type="hidden"
+                                            value="all.group.with.links.records">
+                                        <input id="Downloads_11__FileGeneratedDate"
+                                            name="Downloads[11].FileGeneratedDate" type="hidden"
+                                            value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[11].Selected" type="checkbox" name="Downloads[11].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.group.with.links.records|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[11].Selected" class="govuk-checkboxes__label">All group
+                                            records with links.zip, 0.89 MB</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-form-group">
+                                <h3 class="govuk-heading-s">Open group data</h3>
+                                <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_12__Tag" name="Downloads[12].Tag" type="hidden"
+                                            value="academy.sponsor.and.trust.links">
+                                        <input id="Downloads_12__FileGeneratedDate"
+                                            name="Downloads[12].FileGeneratedDate" type="hidden"
+                                            value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[12].Selected" type="checkbox" name="Downloads[12].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="academy.sponsor.and.trust.links|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[12].Selected" class="govuk-checkboxes__label">Academy
+                                            sponsor and trust links.csv, 3.63 MB</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="govuk-heading-m">Governors</h2>
+                            <p>You can download the complete record for all governors listed within GIAS.</p>
+                            <div class="govuk-form-group">
+                                <h3 class="govuk-heading-s">All governor data</h3>
+                                <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_13__Tag" name="Downloads[13].Tag" type="hidden"
+                                            value="all.governance.records">
+                                        <input id="Downloads_13__FileGeneratedDate"
+                                            name="Downloads[13].FileGeneratedDate" type="hidden"
+                                            value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[13].Selected" type="checkbox" name="Downloads[13].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.governance.records|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[13].Selected" class="govuk-checkboxes__label">Governor
+                                            ﬁelds CSV, 31.7 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_14__Tag" name="Downloads[14].Tag" type="hidden"
+                                            value="all.mat.governance.records">
+                                        <input id="Downloads_14__FileGeneratedDate"
+                                            name="Downloads[14].FileGeneratedDate" type="hidden"
+                                            value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[14].Selected" type="checkbox" name="Downloads[14].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.mat.governance.records|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[14].Selected" class="govuk-checkboxes__label">All multi
+                                            academy trust (MAT) governance records.csv, 3.19 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_15__Tag" name="Downloads[15].Tag" type="hidden"
+                                            value="all.academy.governance.records">
+                                        <input id="Downloads_15__FileGeneratedDate"
+                                            name="Downloads[15].FileGeneratedDate" type="hidden"
+                                            value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[15].Selected" type="checkbox" name="Downloads[15].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.academy.governance.records|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[15].Selected" class="govuk-checkboxes__label">All academy
+                                            governance records.csv, 13.09 MB</label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input id="Downloads_16__Tag" name="Downloads[16].Tag" type="hidden"
+                                            value="all.la.maintained.governance.records">
+                                        <input id="Downloads_16__FileGeneratedDate"
+                                            name="Downloads[16].FileGeneratedDate" type="hidden"
+                                            value="7/21/2022 12:00:00 AM">
+                                        <input id="Downloads[16].Selected" type="checkbox" name="Downloads[16].Selected"
+                                            class="govuk-checkboxes__input" value="true"
+                                            data-trackinglabel="all.la.maintained.governance.records|7/21/2022 12:00:00 AM|False">
+                                        <label for="Downloads[16].Selected" class="govuk-checkboxes__label">All local
+                                            authority (LA) maintained governance records.csv, 15.42 MB</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                <input type="submit" id="downloadSelected" class="govuk-button"
+                                    value="Download selected files"><br>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <a class="back-to-top-link" href="#top">
+                <svg role="presentation" focusable="false" class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg"
+                    width="13" height="17" viewBox="0 0 13 17">
+                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                </svg>
+                Back to top
+            </a>
+
+        </div>
+    </div>
+
+{% endblock %}

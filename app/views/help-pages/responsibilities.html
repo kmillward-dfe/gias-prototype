@@ -1,0 +1,259 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+    improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+    href: "http://localhost:3000/landing",
+    text: "Home"
+},
+{
+    href: "../search",
+    text: "Search"
+    },
+    {
+    href: "../download",
+    text: "Downloads"
+    },
+    {
+    href: "../about",
+    text: "About"
+    },
+    {
+    href: "../help",
+    text: "Help",
+    active: true
+    },
+    {
+    href: "../news",
+    text: "News"
+    }
+    ],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+            will help us to improve it.
+        </span>
+    </p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../landing">Home</a></li>
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../help">Help</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+  
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-xl">
+                Service information and users responsibilities
+            </h1>
+        </div>
+    </div>
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <ul class="govuk-list govuk-list--number">
+                <li>
+                    <h2 class="govuk-heading-m">What is GIAS?</h2>
+                    <ul class="govuk-list govuk-list--spaced gias-list--number-nested">
+                        <li data-idx="1.1">
+                            It is the Department for Education's (DfE) register of educational establishments in England and Wales. It contains vital information about children's centres, academies, free schools, maintained schools, independent schools, further education colleges (further education and sixth form corporations, specialist designated colleges and special post 16 institutions) and higher education institutions.
+                        </li>
+                        <li data-idx="1.2">
+                            It is the
+                            <a href="#" target="_blank" rel="noreferrer noopener">National Database of Governors (opens in new tab)</a> (for those establishment types where this applies).
+                        </li>
+                        <li data-idx="1.3">
+                            All establishments are assigned a GIAS record as part of their registration or change of establishment type process.
+                        </li>
+                        <li data-idx="1.4">
+                            Section 4 below explains how colleagues associated to establishments with the relevant access, need to keep the establishment's GIAS information up to date.
+                        </li>
+                    </ul>
+                </li>
+    
+                <li>
+                    <h2 class="govuk-heading-m">Why does GIAS need to be kept up to date?</h2>
+                    <ul class="govuk-list govuk-list--spaced gias-list--number-nested">
+                        <li data-idx="2.1">
+                            It is used by the DfE, other government departments and partners to contact establishments, update systems, perform analysis and inform policy decisions, some of which may carry funding implications.
+                        </li>
+                        <li data-idx="2.2">
+                            Key departmental services, such as
+                            <a href="#" target="_blank" rel="noreferrer noopener">DfE Sign-in (DSI) (opens in new tab)</a>,
+                            <a href="#" target="_blank" rel="noreferrer noopener">Compare School and College Performance (CSCP) (also known as the School Performance Tables (SPT)) (opens in new tab)</a>,
+                            Analyse School Performance (ASP) and
+                            <a href="#" target="_blank" rel="noreferrer noopener">School Financial Benchmarking (SFB) (opens in new tab)</a>
+                            use the information in GIAS to directly feed their services. If GIAS information is incorrect establishments (where applicable) may not be represented correctly on these key services that are available to the public and/or individual establishments.
+                        </li>
+                        <li data-idx="2.3">
+                            The department's partners, such as Ofsted, use information from GIAS directly for their website (where applicable) and for the planning of, and implementation of their inspections. If the GIAS information is incorrect establishments may be misrepresented publicly on their website and it could affect inspections.
+                        </li>
+                        <li data-idx="2.4">
+                            Other partners, such as the
+                            <a href="#" target="_blank" rel="noreferrer noopener">UK Register of Learning Providers (UKRLP) (opens in new tab)</a>
+                            who assign UK provider reference numbers (UKPRNs), also use GIAS information directly so it could affect the issuing of these numbers if GIAS establishment information is incorrect.
+                        </li>
+                        <li data-idx="2.5">
+                            The information feeds many internal DfE systems and analysis (for example the termly school census, the annual school census for independent schools and the school workforce census data collections) so if the information on GIAS is incorrect it could have an impact on establishments, including funding allocations.
+                        </li>
+                        <li data-idx="2.6">
+                            It is used by members of the public to see the publicly available information on establishments. If the information is not correct establishments are not being represented correctly to the public, many of whom are parents (or prospective parents) of the pupils and students in establishments.
+                        </li>
+                        <li data-idx="2.7">
+                            Many external sources use the publicly available information about establishments, for example educational researchers and estate agents (to map establishments in a house buying area). If the information is incorrect establishments are being portrayed inaccurately in their research and systems.
+                        </li>
+                        <li data-idx="2.8">
+                            It is the legislative avenue for local authority maintained schools to inform the Secretary of State of changes to establishments made through the prescribed alterations regulation process:
+                            “<a href="#" target="_blank" rel="noreferrer noopener">Making significant changes ('prescribed alterations') to maintained schools” (opens in new tab)</a>. For academies the
+                            “<a href="#" target="_blank" rel="noreferrer noopener">Making significant changes to an open academy and closure by mutual agreement” (opens in new tab)</a> guidance sets out that GIAS must be kept up to date.
+                        </li>
+                        <li data-idx="2.9">
+                            It is also the approved process for schools to inform the Secretary of State of their intention to join or leave a federation. Information on federating can be found within the
+                            <a href="#" target="_blank" rel="noreferrer noopener">Governance in federations (opens in new tab)</a>.
+                        </li>
+                        <li data-idx="2.10">
+                            All governance boards are required to provide information to the Secretary of State about people involved in governance via GIAS which is also the
+                            <a href="#" target="_blank" rel="noreferrer noopener">National Database of Governors (opens in new tab)</a>.
+                            <a href="#" target="_blank" rel="noreferrer noopener">Section 538 of the Education Act 1996 (opens in new tab)</a> and the 
+                            <a href="#" target="_blank" rel="noreferrer noopener">Academy Trust Handbook (opens in new tab)</a> provide further information about establishments responsibilities with regards to GIAS.
+                        </li>
+                        <li data-idx="2.11">
+                            For these reasons, it is essential that all establishments ensure their details are up to date on GIAS.
+                        </li>
+                    </ul>
+                </li>
+    
+                <li>
+                    <h2 class="govuk-heading-m">When should GIAS be updated</h2>
+                    <ul class="govuk-list govuk-list--spaced gias-list--number-nested">
+                        <li data-idx="3.1">
+                            It is vital that establishments keep their GIAS record up to date.
+                        </li>
+                        <li data-idx="3.2">
+                            It is the responsibility of establishments (and for local authority maintained schools the local authority and for academies the MAT) to keep their GIAS record up to date. GIAS must be updated whenever any of the fields associated with their record (establishment details or governance) has changed, or it has been agreed that there will be a change in their establishment that will affect information in their record.
+                        </li>
+                        <li data-idx="3.3">
+                            Examples of changes are when a new headteacher or principle is appointed, changes in the establishments age range, if the gender of the establishment changes (where applicable), if the establishment (maintained schools only) is leaving or joining a federation, changes to trusts (single-academy trusts (SATs) and multi-academy trusts (MATs)), changes to academies and free schools, when a new governance role is appointed or one ends (where applicable).
+                        </li>
+                    </ul>
+                </li>
+    
+                <li>
+                    <h2 class="govuk-heading-m">How to update GIAS</h2>
+                    <ul class="govuk-list govuk-list--spaced gias-list--number-nested">
+                        <li data-idx="4.1">
+                            Those colleagues within establishments, local authorities and MATs who have access to the establishment record they are associated with do this via their
+                            <a href="#" target="_blank" rel="noreferrer noopener">DSI (opens in new tab)</a>
+                            account that allows them to access their establishments GIAS record, access the non-public information and amend the establishment's record. It is recommended that establishments have nominated members of staff who maintain the establishment's GIAS record.
+                        </li>
+                        <li data-idx="4.2">
+                            For those colleagues mentioned in 4.1 log into
+                            <a href="#" target="_blank" rel="noreferrer noopener">DSI (opens in new tab)</a>.
+                            If you are a user of other DfE services, you need to select the GIAS option.
+                        </li>
+                        <li data-idx="4.3">
+                            Each establishment has a DSI approver who can grant access to other colleagues within their establishment. It is the approver's responsibility to keep the users who can access and edit their establishment's GIAS record up to date (through adding and removing colleagues), taking into account the
+                            <a href="#" target="_blank" rel="noreferrer noopener">General Data Protection Regulation (GDPR) (opens in new tab)</a>.
+                            Local authority users and MAT users are given respective access via their own DSI approvers. In some cases, local authority users can make changes and approve and MAT users can suggest changes.
+                        </li>
+                        <li data-idx="4.4">
+                            Once logged in details can be edited by selecting the relevant tabs, reviewing the information, and editing the fields that need amending. Prompts to save will be given where appropriate. It is important to save the tab, even if changes were not needed, as it confirms the information is correct and adds a date stamp to the records audit log.
+                        </li>
+                        <li data-idx="4.5">
+                            When a record is saved some changes will take effect immediately and some may need relevant local authority or DfE approval, according to the establishment type and individual field being edited. You will be prompted where changes require further approval. On occasion, you may also need to provide supporting documentation to the relevant DfE policy team.
+                        </li>
+                        <li data-idx="4.6">
+                            For further information on how to update establishment information on GIAS please see the
+                            <a href="/help-pages/guidance">guidance</a> section on the site.
+                            <a href="/help-pages/faqs">The frequently asked questions (FAQs)</a> may also help.
+                            If you cannot find the answer in these help sections you can contact the GIAS Support team using the
+                            <a href="#" target="_blank" rel="noreferrer noopener">data collections service request form (opens in new tab)</a>
+                            and choosing the Edubase (GIAS) option for your query. Please note there is a service level agreement (SLA) for responses so they will not be answered immediately.
+                        </li>
+                        <li data-idx="4.7">
+                            The GIAS Support team recommends that, as a minimum, reviews of the record of the establishment you are associated with are undertaken monthly and required changes made.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+    
+                <a class="back-to-top-link" href="#top">
+            <svg role="presentation" focusable="false" class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+            </svg>
+            Back to top
+        </a>
+    
+        </div>
+    </div>
+    
+
+{% endblock %}

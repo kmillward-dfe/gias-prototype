@@ -1,0 +1,335 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Get Information about Schools
+{% endblock %}
+
+{% block header %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We use some essential cookies to make this service work.</p>
+<p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make
+    improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+ariaLabel: "Cookies on Get Information about Schools",
+messages: [
+{
+headingText: "Cookies on Get Information about Schools",
+html: html,
+actions: [
+{
+text: "Accept analytics cookies",
+type: "button",
+name: "cookies",
+value: "accept"
+},
+{
+text: "Reject analytics cookies",
+type: "button",
+name: "cookies",
+value: "reject"
+},
+{
+text: "View cookies",
+href: "#"
+}
+]
+}
+]
+}) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+navigation: [
+{
+href: "http://localhost:3000/landing",
+text: "Home"
+},
+{
+    href: "search",
+    text: "Search"
+    },
+    {
+    href: "download",
+    text: "Downloads"
+    },
+    {
+    href: "about",
+    text: "About"
+    },
+    {
+    href: "help",
+    text: "Help"
+    },
+    {
+    href: "news",
+    text: "News",
+    active: true
+    }
+    ],
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner ">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-ZYZAR7wa5FMmFGoqFTjsw5UREJBVlAxSTBKWFdOMEcwTTU1M0gyVVJKRCQlQCN0PWcu">feedback</a>
+            will help us to improve it.
+        </span>
+    </p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">News</h1>
+            <p>System updates for each development release, such as new functionality, features and bug fixes and other
+                non development news items relating to Get Information about Schools (GIAS).</p>
+            <p>All news items show what was originally displayed at the time of publication, therefore some links in
+                these news items may no longer work.</p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <form>
+                <div class="govuk-grid-column-one-third govuk-!-padding-0">
+                    <p>
+                        Showing
+                        <select class="govuk-select" id="news-year" name="year">
+                            <option value="2022" selected="selected">2022 news</option>
+                            <option value="2021">2021 news</option>
+                            <option value="2020">2020 news</option>
+                            <option value="2019">2019 news</option>
+                            <option value="2018">2018 news</option>
+                            <option value="2017">2017 news</option>
+
+                        </select>
+                    </p>
+                </div>
+                <div class="govuk-grid-column-two-thirds no-js-show-block">
+                    <button type="submit" class="govuk-button">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="govuk-grid-row news">
+        <div class="govuk-grid-column-two-thirds news-blog">
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <h2 class="govuk-heading-m">
+                System update<br>
+                <span class="gias-news-heading--date">28 June 2022</span>
+            </h2>
+            <p>An updated version of the Get Information about Schools (GIAS) service has been released to all users.
+                You do not need to take any specific action unless otherwise indicated below.</p>
+            <p>This release includes the following improvements:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    Bug fixes and fine-tuning to improve the overall user experience, including:
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>New primary button on the download page.</li>
+                        <li>Pagination degradation added.</li>
+                    </ul>
+                </li>
+            </ul>
+            <br>
+            <p><strong>Office for National Statistics (ONS) frequency update</strong></p>
+            <p>As stated in the last news update, we are increasing the frequency update of the following reference data
+                we use from ONS from yearly to quarterly following the release of the May data from ONS: </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>District</li>
+                <li>Ward</li>
+                <li>Parliamentary constituency</li>
+                <li>Urban/rural description</li>
+                <li>Middle super output area (MSOA)</li>
+                <li>Lower super output area (LSOA)</li>
+            </ul>
+            <p>The ONS May update has been completed.</p>
+            <p>Users are not expected to need to take any specific action unless otherwise indicated.</p>
+            <p>A post release note will follow.</p>
+            <p><strong>Further information</strong></p>
+            <p>The yearly update of data from the underlying data of the <a
+                    href="https://www.gov.uk/government/statistics/schools-pupils-and-their-characteristics-january-2022">schools,
+                    pupils and their characteristics statistical publication</a> will take place shortly over several
+                days. A notice will be added to the service whilst this work is undertaken and then updated once all
+                work is completed.</p>
+            <p>The fields that will be updated are the:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Total number of pupils</li>
+                <li>Total number of boys</li>
+                <li>Total number of girls</li>
+                <li>Number of pupils eligible for free school meals (FSM)</li>
+                <li>Percentage of children eligible for free school meals (FSM)</li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <h2 class="govuk-heading-m">
+                System update<br>
+                <span class="gias-news-heading--date">17 May 2022</span>
+            </h2>
+            <p>An updated version of the Get Information about Schools (GIAS) service has been released to all users.
+                You do not need to take any specific action unless otherwise indicated below.</p>
+            <p>This release includes the following improvements:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    Bug fixes and fine-tuning to improve the overall user experience, including:
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Update pagination to have more padding.</li>
+                        <li>Format content layout of modal.</li>
+                        <li>Format content layout and amend wording of group name or reference number field search
+                            modal.</li>
+                        <li>Format content of reveal on Download page.</li>
+                        <li>Update styling for 'Closed' label.</li>
+                    </ul>
+                </li>
+            </ul>
+            <br>
+            <p><strong>Further Information</strong></p>
+            <p><strong>Office for National Statistics (ONS) frequency update</strong></p>
+            <p>We will be increasing the frequency update of the following reference data we use from ONS from yearly to
+                quarterly following the release of the May data from ONS:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>District</li>
+                <li>Ward</li>
+                <li>Parliamentary constituency</li>
+                <li>Urban/rural description</li>
+                <li>Middle super output area (MSOA)</li>
+                <li>Lower super output area (LSOA)</li>
+            </ul>
+            <p>Once this update has been completed, we will let users know.</p>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <h2 class="govuk-heading-m">
+                System update<br>
+                <span class="gias-news-heading--date">5 April 2022</span>
+            </h2>
+            <p>An updated version of the Get Information about Schools (GIAS) service has been released to all users.
+                You do not need to take any specific action unless otherwise indicated below.</p>
+            <p>This release includes the following improvements:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    Bug fixes and fine-tuning to improve the overall user experience, including:
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Fix to bulk update governance template.</li>
+                        <li>Administrator functionality only - improvements for the notification banner and the news
+                            page.</li>
+                    </ul>
+                </li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <h2 class="govuk-heading-m">
+                System update<br>
+                <span class="gias-news-heading--date">22 March 2022</span>
+            </h2>
+            <p>An updated version of the Get Information about Schools (GIAS) service has been released to all users.
+                You do not need to take any specific action unless otherwise indicated below.</p>
+            <p>This release includes the following improvements:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    Bug fixes and fine-tuning to improve the overall user experience, including:
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Amend the padding on the search header page to 50px.</li>
+                        <li>Help header realignment.</li>
+                        <li>FAQ page realignment and naming amendments.</li>
+                        <li>Glossary page realignment.</li>
+                        <li>Contact on help page realignment.</li>
+                        <li>Contact page content realignment.</li>
+                        <li>Terms of use page realignment.</li>
+                        <li>News page redesign, including homepage latest news hyperlinks and removal of news popup.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <h2 class="govuk-heading-m">
+                System update<br>
+                <span class="gias-news-heading--date">8 March 2022</span>
+            </h2>
+            <p>An updated version of the Get Information about Schools (GIAS) service has been released to all users.
+                You do not need to take any specific action unless otherwise indicated below.</p>
+            <p>This release includes the following improvements:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    Bug fixes and fine-tuning to improve the overall user experience, including:
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Validation updates to the children’s centres groups group manager email address fields and
+                            filter searches for specific users.</li>
+                        <li>Make visible the number of free school meals field on the user interface (UI) in non-edit
+                            and edit mode. Only the GIAS support team can edit this field in the edit mode.</li>
+                        <li>Ensure the different search extracts and the downloads have the number of free school meals
+                            (FSM) field present where applicable.</li>
+                        <li>Creation of GIAS About Page.</li>
+                        <li>Establishment search - remove local authority disambiguation behaviour.</li>
+                        <li>Update of site breadcrumbs across the GIAS site to reflect the new home page and about page
+                            and some existing corrections.</li>
+                    </ul>
+                </li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <h2 class="govuk-heading-m">
+                System update<br>
+                <span class="gias-news-heading--date">8 February 2022</span>
+            </h2>
+            <p>An updated version of the Get Information about Schools (GIAS) service has been released to all users.
+                You do not need to take any specific action unless otherwise indicated below.</p>
+            <p>This release includes the following improvements:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    Bug fixes and fine-tuning to improve the overall user experience, including:
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Creation of GIAS service Home Page.</li>
+                        <li>Update the Independent School Types Fields where EHC Plans are referenced.</li>
+                        <li>Online Providers - Suppress the Confirm Button.</li>
+                        <li>Fix for federations created in error.</li>
+                    </ul>
+                </li>
+            </ul>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        </div>
+    </div>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <a class="back-to-top-link" href="#top">
+                <svg role="presentation" focusable="false" class="back-to-top-icon" xmlns="http://www.w3.org/2000/svg"
+                    width="13" height="17" viewBox="0 0 13 17">
+                    <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                </svg>
+                Back to top
+            </a>
+
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}

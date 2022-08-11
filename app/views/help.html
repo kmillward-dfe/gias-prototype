@@ -52,31 +52,31 @@ serviceName: serviceName,
 serviceUrl: "/",
 navigation: [
 {
-href: "http://localhost:3000/landing",
-text: "Home",
-active: true
+    href: "http://localhost:3000/landing",
+    text: "Home"
 },
 {
-href: "#2",
-text: "Search"
-},
-{
-href: "#3",
-text: "Downloads"
-},
-{
-href: "#4",
-text: "About"
-},
-{
-href: "#5",
-text: "Help"
-},
-{
-href: "#6",
-text: "News"
-}
-],
+    href: "search",
+    text: "Search"
+    },
+    {
+    href: "download",
+    text: "Downloads"
+    },
+    {
+    href: "about",
+    text: "About"
+    },
+    {
+    href: "help",
+    text: "Help",
+    active: true
+    },
+    {
+    href: "news",
+    text: "News"
+    }
+    ],
 containerClasses: "govuk-width-container"
 }) }}
 {% endblock %}
@@ -107,9 +107,6 @@ containerClasses: "govuk-width-container"
 {% endblock %}
 
 {% block content %}
-
-<main id="main-content" class="govuk-main-wrapper" role="main">
-
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl">Help using Get Information about Schools</h1>
@@ -122,31 +119,31 @@ containerClasses: "govuk-width-container"
     </div>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Contact</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/contact">Contact</a></h2>
             <p>Contact us if you are an establishment, local authority, academy trust or member of the public who has a query about Get Information about Schools.</p>
     
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Glossary</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/glossary">Glossary</a></h2>
             <p>Specific terms explained with a full description.</p>
     
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Frequently asked questions (FAQs)</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/faqs">Frequently asked questions (FAQs)</a></h2>
             <p>Frequently asked questions about Get Information about Schools.</p>
     
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Guidance</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/guidance">Guidance</a></h2>
             <p>General guidance about Get Information about Schools and for help with specific areas.</p>
     
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Terms of use</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/terms">Terms of use</a></h2>
             <p>Terms of use for the Get Information about Schools service.</p>
     
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Service information and users responsibilities</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/responsibilities">Service information and users responsibilities</a></h2>
             <p>Information for users about the service and their responsibilities.</p>
     
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Privacy notice</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/privacy">Privacy notice</a></h2>
             <p>Information about how we use your personal data.</p>
     
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Cookies</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/cookies">Cookies</a></h2>
             <p>How cookies are used on Get Information about Schools and each cookie's purpose.</p>
     
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="#">Accessibility statement</a></h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="/help-pages/accessibility">Accessibility statement</a></h2>
             <p>Information about Get Information about Schools accessibility for users.</p>
     
                 <a class="back-to-top-link" href="#top">
@@ -159,6 +156,5 @@ containerClasses: "govuk-width-container"
         </div>
     </div>
     
-    </main>
 
 {% endblock %}
