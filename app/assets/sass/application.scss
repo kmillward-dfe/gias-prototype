@@ -432,4 +432,45 @@ $govuk-assets-path: '/govuk/assets/';
     margin-bottom: 50px;
   }
   
+
+#search-results .govuk-accordion__show-all{
+  display: none;
+}
+
+#search-results .govuk-accordion__section-heading-text{
+  padding-left: 10px;
+  font-size: 16px;
+  text-align: left;
   
+}
+
+.searchresult-selection{
+border: 4px solid #d8dadb;
+border-right: 4px solid #d8dadb;
+}
+
+.searchresult-header{
+  background-color: #d8dadb;
+  position: relative;
+    display: block;
+    width: 100%;
+    border: 0px;
+}
+
+#search-results .govuk-accordion__section-toggle-text{
+  display: none;
+}
+
+.govuk-accordion__section-toggle-focus{
+  position: absolute;
+    width: 24px;
+    height: 25px;
+    padding-top: 5px;
+    right: 0;
+    top: 0;
+}
+
+#search-results .govuk-accordion__section-button{
+  border-top: none;
+  padding-bottom: 0px;
+}
