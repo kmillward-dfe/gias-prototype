@@ -133,64 +133,443 @@ containerClasses: "govuk-width-container"
         </div>
       </div>
 
-      <div class="govuk-option-select js-collapsible no-scroll" id="option-select-sort-by" role="search">
-        <button class="js-container-head" aria-expanded="true" aria-controls="option-select-sort-by">
-          <div class="option-select-label">Sort by</div>
-        </button>
-        <div class="options-container">
-          <label for="sortby-selector" class="govuk-visually-hidden">Sort by</label>
-          <select class="govuk-select trigger-result-update sortby-selector" name="z" id="sortby-selector">
-            <option id="distance" value="d" selected="">Distance</option>
-            <option id="alpha-az" value="a">Alphabetical A-Z</option>
-            <option id="alpha-za" value="z">Alphabetical Z-A</option>
-          </select>
-          <a href="#results-container" class="govuk-visually-hidden-focusable gias-filter-skip-link">Skip to results</a>
-
+      <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
+        <div class="govuk-accordion__section searchresult-selection ">
+          <div class="govuk-accordion__section-header searchresult-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Sort by
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
+            <select class="govuk-select trigger-result-update sortby-selector" name="z" id="sortby-selector">
+              <option id="distance" value="d" selected="">Distance</option>
+              <option id="alpha-az" value="a">Alphabetical A-Z</option>
+              <option id="alpha-za" value="z">Alphabetical Z-A</option>
+            </select>
+          </div>
         </div>
       </div>
 
-      <div class="govuk-option-select radius-filter js-collapsible no-scroll" data-closed-on-load="false"
-        id="option-select-radius" data-bind-alias="aa" role="search">
-        <button class="js-container-head" aria-expanded="true" aria-controls="option-select-radius">
-          <div class="option-select-label">Within radius of</div>
-          <div class="js-selected-counter"></div>
-        </button>
-        <div class="options-container">
-          <div class="js-auto-height-inner">
+      <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
+        <div class="govuk-accordion__section searchresult-selection ">
+          <div class="govuk-accordion__section-header searchresult-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Within radius of
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
             <fieldset class="govuk-fieldset range-group">
-              <div class="govuk-form-group">
+              <div class=".govuk-form-group search-results">
                 <legend class="govuk-visually-hidden">Enter the radius in miles</legend>
                 <span class="inline-form-control">
                   <label for="RadiusInMiles" class="govuk-visually-hidden">Radius in miles</label>
                   <input type="text" id="RadiusInMiles" name="aa" value="3" class="govuk-input govuk-input--width-5"
                     maxlength="5">
                   &nbsp;miles
-                  <a href="#" class="govuk-button govuk-button--secondary filter-button"
+                  <a href="#" class="govuk-button govuk-button--secondary filter-button search-results-button"
                     data-module="govuk-button">Apply</a>
                 </span>
               </div>
             </fieldset>
           </div>
-          <a href="#results-container" class="govuk-visually-hidden-focusable gias-filter-skip-link">Skip to results</a>
         </div>
       </div>
 
 
-    <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
-  <div class="govuk-accordion__section searchresult-selection " >
-    <div class="govuk-accordion__section-header searchresult-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Establishment type
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <p class='govuk-body'>This is the content for Writing well for the web.</p>
-    </div>
-  </div>
-  </div>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
+        <div class="govuk-accordion__section searchresult-selection ">
+          <div class="govuk-accordion__section-header searchresult-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Establishment type
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
+            <div id="accordion-searchresults" class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1">
+              <div class="govuk-form-group options-container">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        All
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                        Academies
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Children's Centres
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Colleges
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Free Schools
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Independent schools
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Local authority maintained schools
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Online provider
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
+        <div class="govuk-accordion__section searchresult-selection ">
+          <div class="govuk-accordion__section-header searchresult-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Status
+              </span>
+            </h2>
+          </div>
+
+          <div id="accordion-searchresults" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
+            <div class="govuk-form-group options-container">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      All
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                      Closed
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      Open
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      Open, but proposed to close
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      Proposed to open
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
+        <div class="govuk-accordion__section searchresult-selection ">
+          <div class="govuk-accordion__section-header searchresult-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Phase of education
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
+            <div id="accordion-searchresults" class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1">
+              <div class="govuk-form-group options-container">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        All
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                        16 plus
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        All-through
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Middle deemed primary
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Middle deemed secondary
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Not applicable
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Nursey
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
+        <div class="govuk-accordion__section searchresult-selection ">
+          <div class="govuk-accordion__section-header searchresult-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Local authortiy
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
+            <div id="accordion-searchresults" class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1">
+              <div class="govuk-form-group options-container">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        All
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                        Barking and Dagenham
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Barnet
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Barnsley
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Bath and North East Somerset
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Bedford
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Bexley
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
+        <div class="govuk-accordion__section searchresult-selection ">
+          <div class="govuk-accordion__section-header searchresult-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Religious character
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
+            <div id="accordion-searchresults" class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1">
+              <div class="govuk-form-group options-container">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        All
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                        Anglican
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Anglican/Christian
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Anglican/Church of England
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Anglican/Evangelical
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Buddhist
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Catholic
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="search-results">
+        <div class="govuk-accordion__section searchresult-selection ">
+          <div class="govuk-accordion__section-header searchresult-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                More filters
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1">
+            <div id="accordion-searchresults" class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1">
+              <div class="govuk-form-group options-container">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        Open date
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                        Close date
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Age range low
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Age range high
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Admissions policy
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Boarding provision
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        Diocese
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -200,14 +579,32 @@ containerClasses: "govuk-width-container"
       <div class="govuk-grid-column-two-thirds">
         <div class="search-results-header">
           <div class="top-pagination">
-            <nav role="navigation" class="pagination">
+            <nav role="navigation" id="search-results-pagination" class="pagination" >
               <p class="govuk-body-s">Showing 1-50 of <span id="list-count">143</span> establishments</p>
-              <ul class="pagination-links">
-                <li>
-                  <a href="?SelectedTab=Establishments&amp;SearchType=Location&amp;SearchType=Location&amp;LocationSearchModel.Text=Newcastle-upon-Tyne%2c+Tyne+%26+Wear&amp;LocationSearchModel.AutoSuggestValue=54.977840423583984%2c+-1.6129200458526611&amp;OpenOnly=true&amp;b=1&amp;b=4&amp;startIndex=50&amp;Count=143"
-                    class="pagination-next" aria-label="Next page">Next &gt;&gt;</a>
-                </li>
-              </ul>
+                    <nav class="govuk-pagination" role="navigation" aria-label="results">
+                      <ul class="govuk-pagination__list">
+                        <li class="govuk-pagination__item govuk-pagination__item--current">
+                          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                            1
+                          </a>
+                        </li>
+                        <li class="govuk-pagination__item">
+                          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                            2
+                          </a>
+                        </li>
+                        <li class="govuk-pagination__item">
+                          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                            3
+                          </a>
+                        </li>
+                      <li class="govuk-pagination__next">
+                        <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                          </svg></a>
+                        </li>
+                      </ul>
+                    </nav>
             </nav>
           </div>
           <hr class="govuk-section-break govuk-section-break--visible">
@@ -312,6 +709,64 @@ containerClasses: "govuk-width-container"
               <dd>0.41 miles</dd>
             </dl>
           </li>
+
+          <li class="gias-result-tile">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                <a class="govuk-link" href="/Establishment">Christ Church CofE Primary School</a>
+            </h3>
+
+            <dl>
+                <dt>Address:</dt>
+                <dd>Shieldfield Green, Newcastle upon Tyne, Tyne and Wear, NE2 1XA</dd>
+                <dt>Phase / type:</dt>
+                <dd>
+                    Primary,
+                    Voluntary aided school
+                    
+                </dd>
+                <dt><abbr title="Unique Reference Number">URN</abbr>:</dt>
+                <dd>108493</dd>
+                <dt class="inline-details">
+                    <abbr title="Local authority - Establishment number">LAESTAB</abbr>:
+                </dt>
+                <dd>391/3321</dd>
+                <dt>Status:</dt>
+                <dd>Open</dd>
+                <dt>Local authority name:</dt>
+                <dd>Newcastle upon Tyne</dd>
+                    <dt>Distance:</dt>
+                    <dd>0.45 miles</dd>
+            </dl>
+        </li>
+
+        <li class="gias-result-tile">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a class="govuk-link" href="/Establishment">Newcastle Preparatory School</a>
+          </h3>
+
+          <dl>
+              <dt>Address:</dt>
+              <dd>6 Eslington Road, Jesmond, Newcastle-upon-Tyne, Tyne and Wear, NE2 4RH</dd>
+              <dt>Phase / type:</dt>
+              <dd>
+                  Not applicable,
+                  Other independent school
+                  
+              </dd>
+              <dt><abbr title="Unique Reference Number">URN</abbr>:</dt>
+              <dd>108540</dd>
+              <dt class="inline-details">
+                  <abbr title="Local authority - Establishment number">LAESTAB</abbr>:
+              </dt>
+              <dd>391/6003</dd>
+              <dt>Status:</dt>
+              <dd>Open</dd>
+              <dt>Local authority name:</dt>
+              <dd>Newcastle upon Tyne</dd>
+                  <dt>Distance:</dt>
+                  <dd>0.46 miles</dd>
+          </dl>
+      </li>
 
         </div>
       </div>

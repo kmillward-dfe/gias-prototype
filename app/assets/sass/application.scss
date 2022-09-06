@@ -229,7 +229,6 @@ $govuk-assets-path: '/govuk/assets/';
     appearance: auto;
     writing-mode: horizontal-tb !important;
     text-rendering: auto;
-    color: buttontext;
     letter-spacing: normal;
     word-spacing: normal;
     line-height: normal;
@@ -241,7 +240,6 @@ $govuk-assets-path: '/govuk/assets/';
     align-items: flex-start;
     cursor: default;
     box-sizing: border-box;
-    background-color: buttonface;
     margin: 0em;
     padding: 1px 6px;
     border-width: 2px;
@@ -376,60 +374,18 @@ $govuk-assets-path: '/govuk/assets/';
   }
   
   
-  .js-enabled .govuk-accordion__open-all {
-    font-family: "GDS Transport",arial,sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    font-size: 26px;
-    font-size: .875rem;
-    line-height: 1.1428571429;
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    padding: 0;
-    border-width: 0;
-    color: #1d70b8;
-    background: none;
-    cursor: pointer;
-    -webkit-appearance: none;
-    font-family: "GDS Transport",arial,sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-decoration: underline;
-    float:right;
-  }
   
-  .govuk-option-select{
+  #search-results .govuk-option-select{
     margin-bottom: 10px;
   }
   
-  .inline-form-control {
+  #search-results .inline-form-control {
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: block;
     overflow: hidden;
     margin: 10px;
-  }
-  
-  .inline-form-control .filter-button {
-    margin-bottom: 0;
-    float: right;
-  }
-  
-  .govuk-option-select {
-    border-right: 4px solid #d8dadb;
-  }
-  
-  .gias-filter-checkboxes .govuk-checkboxes__label {
-    padding-left: 5px;
-    font-size: 16px;
-  }
-  
-  .landing-page-map-container
-  {
-    margin-bottom: 50px;
   }
   
 
@@ -441,15 +397,16 @@ $govuk-assets-path: '/govuk/assets/';
   padding-left: 10px;
   font-size: 16px;
   text-align: left;
+  margin-bottom: 1px;
   
 }
 
-.searchresult-selection{
+#search-results .searchresult-selection{
 border: 4px solid #d8dadb;
 border-right: 4px solid #d8dadb;
 }
 
-.searchresult-header{
+#search-results .searchresult-header{
   background-color: #d8dadb;
   position: relative;
     display: block;
@@ -461,7 +418,7 @@ border-right: 4px solid #d8dadb;
   display: none;
 }
 
-.govuk-accordion__section-toggle-focus{
+#search-results .govuk-accordion__section-toggle-focus{
   position: absolute;
     width: 24px;
     height: 25px;
@@ -473,4 +430,133 @@ border-right: 4px solid #d8dadb;
 #search-results .govuk-accordion__section-button{
   border-top: none;
   padding-bottom: 0px;
+}
+
+#search-results .govuk-accordion__section-content
+{
+  padding-bottom: 10px;
+}
+
+#search-results .search-results-button{
+  margin-bottom: 0px
+}
+
+#search-results .govuk-accordion
+{
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+
+#accordion-searchresults .govuk-checkboxes__label:before{
+  width: 22px;
+  height: 22px;
+  top: 10px;
+  left: 10px;
+  background-color: #fff;
+}
+
+.govuk-checkboxes__label::before {
+  left: 5px;
+}
+
+
+#accordion-searchresults .gias-filter-checkboxes .govuk-checkboxes__label::before {
+  width: 18px;
+  height: 18px;
+  top: 10px;
+  background-color: #fff;
+}
+
+#accordion-searchresults .govuk-checkboxes__label::after {
+  border-width: 0 0 3px 3px;
+  width: 9px;
+  height: 3px;
+  top: 14px;
+  left: 8px;
+  box-sizing: content-box;
+}
+
+#accordion-searchresults .govuk-checkboxes__label:after {
+  box-sizing: border-box;
+  position: absolute;
+  top: 15px;
+  left: 14px;
+  width: 14px;
+  height: 9px;
+  border-top-color: transparent;
+}
+
+#accordion-searchresults .govuk-checkboxes__label {
+  padding-left: 5px;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+#accordion-searchresults .govuk-checkboxes__item {
+  border-bottom: 1px solid #b1b4b6;
+  display: block;
+  float: none;
+  font-size: 16px;
+  padding-left: 40px;
+}
+
+#accordion-searchresults .options-container {
+  max-height: 320px;
+  overflow-y: scroll;
+}
+
+#search-results .govuk-accordion-nav__chevron
+{
+ color: #383939;
+ border:transparent;
+}
+
+#search-results .govuk-accordion__section-toggle-focus{
+  right:10px;
+}
+
+
+//Showing esablishments .. of ..
+#search-results-pagination .govuk-body-s {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+// Search Results Pagination 
+#search-results-pagination .pagination
+{
+  margin: 0;
+}
+
+#search-results-pagination .govuk-pagination
+{
+    right: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 16px;
+    position: relative;
+}
+
+//pagination list items - This is how they stick to the right hand side
+#search-results-pagination .govuk-pagination__list
+{
+  margin: 0;
+  float: right;
+}
+//pagination numbers 
+#search-results-pagination .govuk-pagination__item
+{
+  float: left;
+  display: block;
+  text-align: center;
+  padding-left: 10px;
+}
+//pagination next
+#search-results-pagination .govuk-pagination__next{
+  float: left;
+  display: block;
+  text-align: center;
+  padding-left: 10px;
+  
 }
