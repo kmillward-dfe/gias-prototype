@@ -388,7 +388,7 @@ $govuk-assets-path: '/govuk/assets/';
     margin: 10px;
   }
   
-
+//Hides show all sections
 #search-results .govuk-accordion__show-all{
   display: none;
 }
@@ -506,16 +506,17 @@ border-right: 4px solid #d8dadb;
   overflow-y: scroll;
 }
 
+//chevron style
 #search-results .govuk-accordion-nav__chevron
 {
  color: #383939;
- border:transparent;
 }
 
-#search-results .govuk-accordion__section-toggle-focus{
-  right:10px;
+//toggle size set at 0 so search boxes are the correct size
+#search-results .govuk-accordion__section-toggle
+{
+  margin: 0;
 }
-
 
 //Showing esablishments .. of ..
 #search-results-pagination .govuk-body-s {
